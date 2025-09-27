@@ -4,7 +4,6 @@ import { NavLink } from "react-router-dom";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  // Define nav links in an array
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },

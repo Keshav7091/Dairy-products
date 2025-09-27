@@ -2,6 +2,7 @@ import React from "react";
 import { FaHeart } from "react-icons/fa";
 import { GiCookingPot } from "react-icons/gi";
 import { AiOutlineArrowRight } from "react-icons/ai";
+import CustomButton from "../CustomButton";
 
 const RecipeInspiration = () => {
   const recipes = [
@@ -44,9 +45,8 @@ const RecipeInspiration = () => {
           </div>
 
           <div className="mt-10">
-            <button className="bg-green-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-green-700 transition-colors duration-300">
-              View All Recipes
-            </button>
+            
+            <CustomButton text="View All Recipes" link="/about" />
           </div>
         </div>
 

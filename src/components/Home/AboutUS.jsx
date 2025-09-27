@@ -1,6 +1,7 @@
 import React from "react";
 // Assuming you have Lucide-React or another icon library installed (e.g., 'lucide-react')
 import { Star, Leaf, Factory, Truck } from "lucide-react";
+import CustomButton from "../CustomButton";
 // Agar lucide-react nahi hai, toh maine emojis ko Lucide icons se replace kiya hai
 // taaki hum in par classes apply kar sakein.
 
@@ -67,9 +68,11 @@ const AboutUS = () => {
             </li>
           </ul>
 
-          <button className="mt-8 btn btn-primary px-12 py-3 rounded-full text-white font-semibold transition duration-300 shadow-md hover:shadow-lg">
+          {/* <button className="mt-8 btn btn-primary px-12 py-3 rounded-full text-white font-semibold transition duration-300 shadow-md hover:shadow-lg">
             Read More
-          </button>
+          </button> */}
+
+          <CustomButton text="Read More" link="/about" />
         </div>
 
         {/* ➡️ Right Block: Image + Feature Icons */}

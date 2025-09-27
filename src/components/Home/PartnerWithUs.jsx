@@ -16,7 +16,7 @@ const PartnerWithUs = () => {
               Are you a retailer, restaurant, or distributor? We offer reliable supply, great shelf life, and authentic products for trade.
             </p>
             {/* Ribbon / Badge style link */}
-            <div className="inline-block bg-green-600 text-white px-6 py-3 rounded-lg font-semibold shadow-lg transform hover:scale-105 transition-transform duration-500 cursor-pointer relative overflow-hidden">
+            <div className="inline-block text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1 btn btn-primary hover:bg-green-500 cursor-pointer relative overflow-hidden">
               <span className="absolute inset-0 bg-white/10 transform -translate-x-full hover:translate-x-0 transition-transform duration-500"></span>
               <span className="relative flex items-center gap-2 z-10">
                 <FaBoxOpen /> Enquire Now

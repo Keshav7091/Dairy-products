@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Star } from "lucide-react";
+import CustomButton from "../CustomButton";
 
 // --- Products Data ---
 const products = [
@@ -222,6 +223,10 @@ const OurProduct = () => {
               />
             )}
           </div>
+        </div>
+
+        <div className="flex justify-center">
+          <CustomButton text="View All Products" link="/about" />
         </div>
       </div>
     </section>

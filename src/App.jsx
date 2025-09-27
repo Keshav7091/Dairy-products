@@ -7,6 +7,9 @@ import Footer from '../src/components/Footer'
 import Home from '../src/pages/Home'
 import Contact from '../src/pages/Contact'
 import AboutPage from '../src/pages/AboutPage'
+import Recipes from './pages/Recipes';
+import Products from './pages/Products';
+import Services from './pages/Services';
 
 function App() {
 
@@ -20,6 +23,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path='/recipes' element={ <Recipes /> } />
+        <Route path='/products' element={ <Products /> } /> 
+        <Route path='/services' element={ <Services /> } />
       </Routes>
 
       {/* Footer is visible on all pages */}
