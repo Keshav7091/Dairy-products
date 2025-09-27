@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+
+/* ------------------------
+   Global Styles
+---------------------------*/
+
+/* Default font stack (equivalent to Tailwind's font-sans) */
+body {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  @apply text-gray-800 bg-white leading-relaxed;
+}
+
+/* Container utility */
+.container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+
+/* Background image */
+.bg-image {
+  background-image: url("/bg.jpg"); /* public folder ke image ka path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+/* ------------------------
+   Custom Components
+---------------------------*/
+@layer components {
+
+  /* Buttons */
+  .btn {
+    @apply inline-block px-6 py-3 rounded-lg font-medium transition duration-300;
+  }
+
+  .btn-primary {
+    @apply text-white shadow-md px-6 py-3 rounded-md font-semibold transition duration-300;
+    background-image: linear-gradient(to right,
+        #64a019,
+        #6ca821,
+        #73b128,
+        #7bb92f,
+        #83c236);
+  }
+
+  .btn-primary:hover {
+    background-image: linear-gradient(to right,
+        #558c16,
+        #5c941b,
+        #629c21,
+        #69a426,
+        #70ad2c);
+  }
+
+
+  /* Navbar */
+  .nav-link {
+    @apply text-gray-700 hover:text-green-700 transition duration-200;
+  }
+
+  .nav-active {
+    @apply text-green-700 font-semibold;
+  }
+
+
+
+}
