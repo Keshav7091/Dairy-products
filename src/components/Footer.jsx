@@ -1,5 +1,6 @@
 import React from "react";
 import { FaInstagram, FaLinkedin, FaFacebook } from "react-icons/fa";
+import CustomButton from "./CustomButton";
 
 const Footer = () => {
   return (
@@ -40,9 +41,9 @@ const Footer = () => {
             <input
               type="email"
               placeholder="Enter your email"
-              className="px-4 py-3 rounded-full text-gray-900 w-full sm:w-auto focus:outline-none border border-gray-600"
+              className="px-4 py-3 rounded-full text-white w-full sm:w-auto focus:outline-none border border-gray-600"
             />
-            <button className="bg-green-400 hover:bg-green-500 text-gray-900 px-6 py-3 rounded-full font-semibold transition-colors">
+            <button className="btn btn-primary px-5 py-3 rounded-full font-semibold transition-colors">
               Subscribe
             </button>
           </form>

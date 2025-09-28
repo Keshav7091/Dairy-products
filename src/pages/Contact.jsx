@@ -8,6 +8,7 @@ import {
 import toast, { Toaster } from "react-hot-toast";
 import axios from "axios";
 import PageBanner from "../components/PageBanner";
+import CustomButton from "../components/CustomButton";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -65,7 +66,6 @@ const Contact = () => {
 
   return (
     <div className="pt-20">
-
       <PageBanner title="Contact Us" />
 
       <Toaster position="top-right" reverseOrder={false} />
@@ -117,12 +117,8 @@ const Contact = () => {
           </p>
 
           {/* CTA */}
-          <a
-            href="/contact"
-            className="inline-block bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-full font-semibold text-lg transition-colors shadow-md hover:shadow-xl"
-          >
-            Partner with Us
-          </a>
+
+          <CustomButton text="Partner with Us" link="/contact" />
         </div>
 
         {/* Decorative Background */}
@@ -133,180 +129,181 @@ const Contact = () => {
       </section>
 
       {/* Form + Info */}
-        <div className="bg-image ">
-      <section className="py-20 container mx-auto px-6 max-w-6xl grid md:grid-cols-2 gap-12">
-        {/* Form */}
-        <div className=" backdrop-blur-lg border border-green-400/30 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
-          <h3 className="text-2xl font-bold mb-6 text-green-400">
-            Trade Enquiry Form
-          </h3>
-          <form className="space-y-5" onSubmit={handleSubmit}>
-            <input
-              type="text"
-              name="fullName"
-              placeholder="Full Name"
-              required
-              value={formData.fullName}
-              onChange={handleChange}
-              className="w-full px-4 py-3 rounded-md focus:outline-none border border-gray-700 text-black"
-            />
-            <input
-              type="text"
-              name="company"
-              placeholder="Business / Company Name"
-              required
-              value={formData.company}
-              onChange={handleChange}
-              className="w-full  px-4 py-3 rounded-md border border-gray-700 text-black"
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Email Address"
-              required
-              value={formData.email}
-              onChange={handleChange}
-              className="w-full  px-4 py-3 rounded-md border border-gray-700 text-black"
-            />
-            <input
-              type="text"
-              name="phone"
-              placeholder="Phone Number"
-              required
-              value={formData.phone}
-              onChange={handleChange}
-              className="w-full  px-4 py-3 rounded-md border border-gray-700 text-black"
-            />
-            <input
-              type="text"
-              name="city"
-              placeholder="City / Region"
-              value={formData.city}
-              onChange={handleChange}
-              className="w-full  px-4 py-3 rounded-md border border-gray-700 text-black"
-            />
+      <div className="bg-image ">
+        <section className="py-20 container mx-auto px-6 max-w-6xl grid md:grid-cols-2 gap-12">
+          {/* Form */}
+          <div className=" backdrop-blur-lg border border-green-400/30 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
+            <h3 className="text-2xl font-bold mb-6 text-green-400">
+              Trade Enquiry Form
+            </h3>
+            <form className="space-y-5" onSubmit={handleSubmit}>
+              <input
+                type="text"
+                name="fullName"
+                placeholder="Full Name"
+                required
+                value={formData.fullName}
+                onChange={handleChange}
+                className="w-full px-4 py-3 rounded-md focus:outline-none border border-gray-700 text-black"
+              />
+              <input
+                type="text"
+                name="company"
+                placeholder="Business / Company Name"
+                required
+                value={formData.company}
+                onChange={handleChange}
+                className="w-full  px-4 py-3 rounded-md border border-gray-700 text-black"
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Email Address"
+                required
+                value={formData.email}
+                onChange={handleChange}
+                className="w-full  px-4 py-3 rounded-md border border-gray-700 text-black"
+              />
+              <input
+                type="text"
+                name="phone"
+                placeholder="Phone Number"
+                required
+                value={formData.phone}
+                onChange={handleChange}
+                className="w-full  px-4 py-3 rounded-md border border-gray-700 text-black"
+              />
+              <input
+                type="text"
+                name="city"
+                placeholder="City / Region"
+                value={formData.city}
+                onChange={handleChange}
+                className="w-full  px-4 py-3 rounded-md border border-gray-700 text-black"
+              />
 
-            <select
-              name="businessType"
-              value={formData.businessType}
-              onChange={handleChange}
-              className="w-full  px-4 py-3 rounded-md border border-gray-700 text-black"
-            >
-              <option value="">Select Business Type</option>
-              <option>Retailer</option>
-              <option>Restaurant</option>
-              <option>Distributor</option>
-              <option>Other</option>
-            </select>
+              <select
+                name="businessType"
+                value={formData.businessType}
+                onChange={handleChange}
+                className="w-full  px-4 py-3 rounded-md border border-gray-700 text-black"
+              >
+                <option value="">Select Business Type</option>
+                <option>Retailer</option>
+                <option>Restaurant</option>
+                <option>Distributor</option>
+                <option>Other</option>
+              </select>
 
-            {/* Products of Interest */}
-            <div>
-              <p className="mb-2 font-semibold text-green-400">
-                Products of Interest:
-              </p>
-              <div className="grid grid-cols-2 gap-3 text-sm">
-                {[
-                  "Paneer",
-                  "Khoya",
-                  "White Butter",
-                  "Shrikhand",
-                  "Whey",
-                  "Other",
-                ].map((product) => (
-                  <label key={product} className="flex items-center gap-2">
-                    <input
-                      type="checkbox"
-                      value={product}
-                      checked={formData.products.includes(product)}
-                      onChange={handleChange}
-                    />
-                    {product}
-                  </label>
-                ))}
-              </div>
-            </div>
-
-            <input
-              type="text"
-              name="volume"
-              placeholder="Expected Monthly Volume (optional)"
-              value={formData.volume}
-              onChange={handleChange}
-              className="w-full  px-4 py-3 rounded-md border border-gray-700 "
-            />
-
-            <textarea
-              name="message"
-              rows={4}
-              placeholder="Message / Additional Requirements"
-              value={formData.message}
-              onChange={handleChange}
-              className="w-full  px-4 py-3 rounded-md border border-gray-700  resize-none"
-            ></textarea>
-
-            <button
-              type="submit"
-              className="w-full flex items-center justify-center gap-3 bg-green-400 text-gray-900 px-5 py-3 rounded-md font-semibold hover:bg-green-500 transition-all duration-300"
-            >
-              <FiSend size={18} />
-              <span>Submit Enquiry</span>
-            </button>
-          </form>
-        </div>
-
-        {/* Contact Info */}
-        <div className=" backdrop-blur-lg border border-green-400/30 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
-          <h3 className="text-2xl font-bold mb-6 text-green-400">
-            Prefer Email?
-          </h3>
-          <p className=" mb-6">
-            You can also reach us directly — we’re happy to send you a
-            catalogue, samples, or pricing info upon request.
-          </p>
-          <div className="space-y-6">
-            <div className="flex items-start gap-4">
-              <MdOutlineMail className="text-green-400 text-2xl" />
+              {/* Products of Interest */}
               <div>
-                <h4 className="font-semibold">Email</h4>
-                <a
-                  href="mailto:info@dairycompany.com"
-                  className=" hover:text-green-400"
-                >
-                  info@dairycompany.com
-                </a>
+                <p className="mb-2 font-semibold text-green-400">
+                  Products of Interest:
+                </p>
+                <div className="grid grid-cols-2 gap-3 text-sm">
+                  {[
+                    "Paneer",
+                    "Khoya",
+                    "White Butter",
+                    "Shrikhand",
+                    "Whey",
+                    "Other",
+                  ].map((product) => (
+                    <label key={product} className="flex items-center gap-2">
+                      <input
+                        type="checkbox"
+                        value={product}
+                        checked={formData.products.includes(product)}
+                        onChange={handleChange}
+                      />
+                      {product}
+                    </label>
+                  ))}
+                </div>
               </div>
-            </div>
-            <div className="flex items-start gap-4">
-              <MdOutlinePhone className="text-green-400 text-2xl" />
-              <div>
-                <h4 className="font-semibold">Phone</h4>
-                <a href="tel:+44xxxxxx" className=" hover:text-green-400">
-                  +44 xxxx xxxxxx
-                </a>
-              </div>
-            </div>
-            <div className="flex items-start gap-4">
-              <MdOutlineLocationOn className="text-green-400 text-2xl" />
-              <div>
-                <h4 className="font-semibold">Registered Office</h4>
-                <p className="">London, United Kingdom</p>
-              </div>
-            </div>
+
+              <input
+                type="text"
+                name="volume"
+                placeholder="Expected Monthly Volume (optional)"
+                value={formData.volume}
+                onChange={handleChange}
+                className="w-full  px-4 py-3 rounded-md border border-gray-700 "
+              />
+
+              <textarea
+                name="message"
+                rows={4}
+                placeholder="Message / Additional Requirements"
+                value={formData.message}
+                onChange={handleChange}
+                className="w-full  px-4 py-3 rounded-md border border-gray-700  resize-none"
+              ></textarea>
+
+              <button
+                type="submit"
+                className="w-full flex items-center justify-center gap-3   px-5 py-3 rounded-md font-semibold btn btn-primary transition-all duration-300 cursor-pointer"
+              >
+                <FiSend size={18} />
+                <span>Submit Enquiry</span>
+              </button>
+              
+            </form>
           </div>
 
-          <div className="mt-8 border-t border-gray-700 pt-6">
-            <h4 className="font-semibold mb-2 text-green-400">
-              Customer Relations & Sales
-            </h4>
-            <p className="">
-              If you're interested in visiting our facility, becoming a
-              stockist, or discussing exclusive partnerships, we’re ready when
-              you are.
+          {/* Contact Info */}
+          <div className=" backdrop-blur-lg border border-green-400/30 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
+            <h3 className="text-2xl font-bold mb-6 text-green-400">
+              Prefer Email?
+            </h3>
+            <p className=" mb-6">
+              You can also reach us directly — we’re happy to send you a
+              catalogue, samples, or pricing info upon request.
             </p>
+            <div className="space-y-6">
+              <div className="flex items-start gap-4">
+                <MdOutlineMail className="text-green-400 text-2xl" />
+                <div>
+                  <h4 className="font-semibold">Email</h4>
+                  <a
+                    href="mailto:info@dairycompany.com"
+                    className=" hover:text-green-400"
+                  >
+                    info@dairycompany.com
+                  </a>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <MdOutlinePhone className="text-green-400 text-2xl" />
+                <div>
+                  <h4 className="font-semibold">Phone</h4>
+                  <a href="tel:+44xxxxxx" className=" hover:text-green-400">
+                    +44 xxxx xxxxxx
+                  </a>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <MdOutlineLocationOn className="text-green-400 text-2xl" />
+                <div>
+                  <h4 className="font-semibold">Registered Office</h4>
+                  <p className="">London, United Kingdom</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-8 border-t border-gray-700 pt-6">
+              <h4 className="font-semibold mb-2 text-green-400">
+                Customer Relations & Sales
+              </h4>
+              <p className="">
+                If you're interested in visiting our facility, becoming a
+                stockist, or discussing exclusive partnerships, we’re ready when
+                you are.
+              </p>
+            </div>
           </div>
-        </div>
-      </section>
-        </div>
+        </section>
+      </div>
     </div>
   );
 };

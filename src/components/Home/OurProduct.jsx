@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Star } from "lucide-react";
+import { motion } from "framer-motion";
 import CustomButton from "../CustomButton";
 
-// --- Products Data ---
 const products = [
   {
     id: 1,
-    name: "Gowala Ghee",
-    category: "Ghee",
+    name: "Paneer - Malai",
+    category: "Paneer",
     image: "/products/01.png",
     rating: 5,
     reviews: 2,
@@ -16,8 +16,8 @@ const products = [
   },
   {
     id: 2,
-    name: "Gowala Cheese",
-    category: "Cheese",
+    name: "Whey Protein",
+    category: "Protein",
     image: "/products/02.png",
     rating: 4,
     reviews: 3,
@@ -26,8 +26,8 @@ const products = [
   },
   {
     id: 3,
-    name: "Milk Shake",
-    category: "Milk",
+    name: "Khoya (Mawa)",
+    category: "Khoya",
     image: "/products/03.png",
     rating: 5,
     reviews: 1,
@@ -36,7 +36,7 @@ const products = [
   },
   {
     id: 4,
-    name: "Gowala Butter",
+    name: "White Butter",
     category: "Butter",
     image: "/products/04.png",
     rating: 3,
@@ -46,9 +46,8 @@ const products = [
   },
 ];
 
-// --- Star Rating ---
 const StarRating = ({ rating, totalStars = 5 }) => (
-  <div className="flex items-center text-yellow-400">
+  <div className="flex items-center text-yellow-400 justify-center">
     {[...Array(totalStars)].map((_, i) => (
       <Star
         key={i}
@@ -61,160 +60,154 @@ const StarRating = ({ rating, totalStars = 5 }) => (
   </div>
 );
 
-// --- Left Side Product Card ---
-const ProductCard = ({ product }) => (
-  <div className="relative bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group w-72 sm:w-80">
-    <div className="bg-[#eff4f8] m-3 relative rounded-lg">
-      {product.discount && (
-        <span className="absolute top-5 right-5 bg-green-500 text-white text-xs font-semibold px-2 py-1 rounded-full z-10">
-          -{product.discount}
-        </span>
-      )}
-      <div className="flex justify-center items-center p-6 h-52 cursor-pointer">
-        <img
-          src={product.image}
-          alt={product.name}
-          className="max-h-full max-w-full object-contain"
-        />
-      </div>
-      <div className="p-4 text-center">
-        <h4 className="text-lg font-semibold text-gray-800 mb-2 group-hover:text-green-500 transition-colors duration-300">
-          {product.name}
-        </h4>
-        <div className="flex justify-center items-center mb-2">
-          <StarRating rating={product.rating} />
-          <span className="text-sm text-gray-500 ml-2">
-            ({product.reviews} Reviews)
-          </span>
-        </div>
-        <p className="text-xl font-bold text-gray-700">
-          ${product.price.toFixed(2)}
-        </p>
-      </div>
+const ProductCard = ({ product, idx }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.5, delay: idx * 0.1 }}
+    className="relative group rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 bg-white"
+  >
+    {product.discount && (
+      <span className="absolute top-3 right-3 bg-green-500 text-white text-xs font-semibold px-2 py-1 rounded-full z-10">
+        -{product.discount}
+      </span>
+    )}
+    <div className="overflow-hidden rounded-xl">
+      <img
+        src={product.image}
+        alt={product.name}
+        loading="lazy"
+        className="w-full h-56 object-contain transition-transform duration-500 group-hover:scale-105"
+      />
     </div>
-  </div>
+    <div className="p-4 text-center">
+      <h4 className="text-lg font-semibold text-gray-800 mb-2 group-hover:text-green-600 transition-colors duration-300">
+        {product.name}
+      </h4>
+      <StarRating rating={product.rating} />
+      <span className="text-sm text-gray-500 ml-1">
+        ({product.reviews} Reviews)
+      </span>
+      <p className="text-xl font-bold text-gray-700 mt-2">
+        ${product.price.toFixed(2)}
+      </p>
+    </div>
+    <div className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <button className="px-4 py-2 bg-green-500 text-white rounded-md shadow-lg hover:bg-green-600 transition">
+        View Product
+      </button>
+    </div>
+  </motion.div>
 );
 
-// --- Right Side Carousel Card ---
 const CarouselCard = ({ product, height }) => (
-  <div
-    className={`relative bg-white rounded-lg shadow-md overflow-hidden`}
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5 }}
+    className="relative bg-white rounded-xl shadow-lg overflow-hidden"
     style={{ height: `${height}px` }}
   >
-    <div className="bg-[#eff4f8] relative h-full m-3 flex flex-col">
-      {product.discount && (
-        <span className="absolute top-5 right-5 bg-green-500 text-white text-xs font-semibold px-2 py-1 rounded-full z-10">
-          -{product.discount}
-        </span>
-      )}
-      <div className="flex justify-center items-center h-2/3">
-        <img
-          src="/home/01.png"
-          alt={product.name}
-          className="max-h-full max-w-[75%] object-contain"
-        />
-      </div>
-      <div className="text-center mt-4">
-        <h4 className="text-2xl font-bold text-gray-800 mb-2">
-          {product.name}
-        </h4>
-        <div className="flex justify-center items-center mb-2">
-          <StarRating rating={product.rating} />
-          <span className="text-sm text-gray-500 ml-2">
-            ({product.reviews} Reviews)
-          </span>
-        </div>
-        <p className="text-2xl font-extrabold text-gray-700">
-          ${product.price.toFixed(2)}
-        </p>
-      </div>
+    {product.discount && (
+      <span className="absolute top-3 right-3 bg-green-500 text-white text-xs font-semibold px-2 py-1 rounded-full z-10">
+        -{product.discount}
+      </span>
+    )}
+    <div className="h-full flex flex-col items-center justify-center p-4">
+      <img
+        src={product.image}
+        alt={product.name}
+        loading="lazy"
+        className="max-h-64 object-contain mb-4"
+      />
+      <h4 className="text-2xl font-bold text-gray-800 mb-1">{product.name}</h4>
+      <StarRating rating={product.rating} />
+      <span className="text-sm text-gray-500 mb-2">
+        ({product.reviews} Reviews)
+      </span>
+      <p className="text-2xl font-extrabold text-gray-700">
+        ${product.price.toFixed(2)}
+      </p>
     </div>
-  </div>
+  </motion.div>
 );
 
-// --- Right Side Carousel ---
 const ProductCarousel = ({ products, cardHeight }) => {
   const [current, setCurrent] = useState(0);
 
-  const nextSlide = () => setCurrent((prev) => (prev + 1) % products.length);
-  const prevSlide = () =>
-    setCurrent((prev) => (prev - 1 + products.length) % products.length);
-  const goToSlide = (index) => setCurrent(index);
+  useEffect(() => {
+    const interval = setInterval(
+      () => setCurrent((prev) => (prev + 1) % products.length),
+      4000
+    );
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="relative w-full sm:w-96">
-      <div className="overflow-hidden rounded-lg relative" style={{ height: `${cardHeight}px` }}>
+      <div
+        className="overflow-hidden rounded-xl relative"
+        style={{ height: `${cardHeight}px` }}
+      >
         {products.map((product, idx) => (
           <div
             key={product.id}
-            className={`absolute top-0 left-0 w-full transition-transform duration-500 ${
+            className={`absolute top-0 left-0 w-full transition-transform duration-700 ${
               idx === current ? "translate-x-0" : "translate-x-full"
             }`}
           >
             <CarouselCard product={product} height={cardHeight} />
           </div>
         ))}
-
-        {/* Dots inside relative container */}
-        <div className="absolute bottom-10 left-0 w-full flex justify-center z-10">
+        <div className="absolute bottom-5 left-0 w-full flex justify-center z-10">
           {products.map((_, idx) => (
             <span
               key={idx}
               className={`h-3 w-3 mx-1 rounded-full cursor-pointer ${
                 idx === current ? "bg-green-600" : "bg-gray-300"
               }`}
-              onClick={() => goToSlide(idx)}
+              onClick={() => setCurrent(idx)}
             />
           ))}
         </div>
       </div>
-
-     
     </div>
   );
 };
 
-// --- Main Section ---
 const OurProduct = () => {
   const leftCardRef = useRef(null);
   const [carouselHeight, setCarouselHeight] = useState(0);
 
   useEffect(() => {
     if (leftCardRef.current) {
-      const cardHeight = leftCardRef.current.offsetHeight;
-      setCarouselHeight(cardHeight * 2); // double the left card height
+      setCarouselHeight(leftCardRef.current.offsetHeight * 2);
     }
   }, []);
 
   return (
-    <section className="py-20 bg-image">
+    <section className="py-24 bg-gradient-to-b from-green-50 to-white">
       <div className="container mx-auto px-6 lg:px-12 xl:px-20">
-        <h2 className="text-xl font-bold text-gray-800 mb-2 font-sans text-center">
-          Our Product
+        <h2 className="text-xl font-bold text-gray-800 mb-2 text-center">
+          Our Products
         </h2>
-        <h3
-          className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-4 text-center"
-          style={{ fontFamily: "Georgia, serif" }}
-        >
-          We Provided the Best Product
+        <h3 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-4 text-center">
+          We Provide the Best Product
         </h3>
         <p className="max-w-2xl mx-auto text-gray-600 mb-12 text-center">
           Continually productize compelling quality for packed with Elated
-          Themes Setting up to website and creating pages.
+          Themes, setting up website and creating pages.
         </p>
 
-        {/* Left Products + Right Carousel */}
-        <div className="flex flex-col lg:flex-row">
-          {/* Left - 2x2 Product Grid */}
-          <div className="grid grid-cols-2 gap-x-23 flex-1">
+        <div className="flex flex-col lg:flex-row gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 flex-1">
             {products.map((product, idx) => (
               <div key={product.id} ref={idx === 0 ? leftCardRef : null}>
-                <ProductCard product={product} />
+                <ProductCard product={product} idx={idx} />
               </div>
             ))}
           </div>
-
-          {/* Right - Product Carousel */}
           <div className="flex-1 flex justify-center items-start">
             {carouselHeight > 0 && (
               <ProductCarousel
@@ -225,8 +218,12 @@ const OurProduct = () => {
           </div>
         </div>
 
-        <div className="flex justify-center">
-          <CustomButton text="View All Products" link="/about" />
+        <div className="flex justify-center mt-12">
+          <CustomButton
+            text="View All Products"
+            link="/products"
+            className="hover:scale-105 transition-transform"
+          />
         </div>
       </div>
     </section>

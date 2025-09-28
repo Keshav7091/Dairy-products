@@ -46,7 +46,7 @@ const RecipeInspiration = () => {
 
           <div className="mt-10">
             
-            <CustomButton text="View All Recipes" link="/about" />
+            <CustomButton text="View All Recipes" link="/recipes" />
           </div>
         </div>
 

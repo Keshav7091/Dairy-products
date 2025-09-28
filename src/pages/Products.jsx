@@ -72,13 +72,19 @@ const Products = () => {
     <div className="bg-gray-50 py-16">
       <PageBanner title="Products" />
 
-      <div className="container">
+      <div className="container pt-10">
 
       {/* Products Header */}
       <div className="max-w-6xl mx-auto text-center mb-12">
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-          Our Products
-        </h1>
+        <h2 className="text-xl font-bold text-gray-800 mb-2 font-sans text-center">
+          Our Product
+        </h2>
+        <h3
+          className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-4 text-center"
+          style={{ fontFamily: "Georgia, serif" }}
+        >
+          We Provided the Best Product
+        </h3>
         <p className="text-gray-700 text-lg md:text-xl">
           Authentic Indian dairy made fresh in the UK.
         </p>

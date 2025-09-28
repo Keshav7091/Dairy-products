@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import PageBanner from "../components/PageBanner";
 
 const Recipes = () => {
@@ -6,30 +7,30 @@ const Recipes = () => {
     {
       title: "Paneer Recipes – High Protein, Versatile, Comforting",
       description:
-        "Paneer adapts beautifully to curries, grills, and stir-fries, offering both substance and softness.",
+        "Paneer is one of the most beloved ingredients in Indian cuisine. It adapts beautifully to curries, grills, and stir-fries, offering both substance and softness without overpowering flavours. Here are some timeless favourites:",
       items: [
         {
           name: "Palak Paneer (Spinach & Paneer Curry)",
           detail:
-            "Smooth curry made with spinach, paneer cubes, garlic, ginger & mild spices. Rich in iron & protein.",
+            "A smooth, vibrant green curry made with blanched spinach, fresh paneer cubes, garlic, ginger, and mild spices. Light on the stomach and rich in iron and protein, this is a perfect winter warmer or everyday dinner option.",
           recommended: "Paneer – Full Fat",
         },
         {
           name: "Grilled Tandoori Paneer Skewers",
           detail:
-            "Marinate paneer chunks in yogurt, ginger-garlic & spices, then grill until charred. Serve with chutney.",
+            "Perfect for summer BBQs or starters, this recipe involves marinating paneer chunks in thick yoghurt, ginger-garlic paste, and tandoori masala, then grilling until charred. Serve with lemon wedges and mint chutney.",
           recommended: "Paneer – Plain",
         },
         {
           name: "Paneer Bhurji (Indian Cottage Cheese Scramble)",
           detail:
-            "Quick scramble of crumbled paneer with onions, tomatoes & spices. Perfect breakfast or wrap filling.",
+            "A quick, nutritious scramble of crumbled paneer sautéed with tomatoes, onions, turmeric, and coriander. Great for breakfast with toast or rolled into a wrap for lunch.",
           recommended: "Malai Paneer",
         },
         {
           name: "Methi Paneer Paratha",
           detail:
-            "Stuff wheat dough with paneer & fenugreek, pan-cook & top with white butter. Soul-satisfying!",
+            "Add finely chopped methi (fenugreek) and spiced paneer to whole wheat dough, roll, and pan-cook. Top with white butter for a soul-satisfying meal.",
           recommended: "Paneer – Fresh",
         },
       ],
@@ -37,26 +38,30 @@ const Recipes = () => {
     {
       title: "Khoya-Based Sweet Recipes – Festive, Indulgent, Timeless",
       description:
-        "Traditional sweets made creamy & authentic with slow-cooked khoya, preservative-free.",
+        "Khoya (or mawa) is a dense, milk-based ingredient used in Indian sweets. Ours is made the traditional way: slow-cooked, creamy, and preservative-free.",
       items: [
         {
           name: "Khoya Gulab Jamun",
-          detail: "Deep-fried dumplings soaked in saffron-cardamom syrup.",
-          recommended: "Khoya – Smooth",
+          detail:
+            "Soft, deep-fried dumplings made from khoya, soaked in warm cardamom-saffron sugar syrup. Rich, festive, and endlessly loved.",
+          recommended: "Khoya – Smooth texture",
         },
         {
           name: "Khoya Barfi",
-          detail: "Thickened khoya with sugar & ghee, topped with nuts.",
-          recommended: "Khoya – Granular",
+          detail:
+            "A classic sweet made by simmering khoya with sugar and ghee until it thickens into a fudge-like consistency. Garnish with slivered pistachios and a pinch of saffron.",
+          recommended: "Khoya – Granular for texture",
         },
         {
           name: "Kalakand",
-          detail: "Quick dessert with khoya, condensed milk & rosewater.",
+          detail:
+            "Quick and delicious, made with khoya, condensed milk, and a hint of rosewater or cardamom. Soft and slightly crumbly, ideal for gifting or celebrations.",
           recommended: "Khoya – Granular",
         },
         {
           name: "Gujiya Filling",
-          detail: "Sweet filling with khoya, nuts, sugar & raisins.",
+          detail:
+            "Combine crumbled khoya with nuts, sugar, and raisins to make the perfect sweet filling for Holi-time gujiyas.",
           recommended: "Khoya – Any",
         },
       ],
@@ -68,23 +73,26 @@ const Recipes = () => {
       items: [
         {
           name: "White Butter with Parathas",
-          detail: "Spread on hot parathas for a creamy, natural sweetness.",
+          detail:
+            "Spread our hand-churned, unsalted butter over aloo or gobhi parathas. Its natural sweetness and creamy finish elevate the simplest meal.",
           recommended: "White Butter",
         },
         {
           name: "Desi Butter Daal Tadka",
-          detail: "Top daal with white butter & cumin-garlic tempering.",
+          detail:
+            "Top your slow-cooked toor or masoor daal with a dollop of white butter and fried cumin-garlic for that comforting 'maa ke haath ka khana' finish.",
           recommended: "White Butter",
         },
         {
           name: "Whey Protein Smoothie",
           detail:
-            "Blend whey with banana, peanut butter, oats & cinnamon. A natural protein shake.",
+            "Blend our filtered whey with banana, peanut butter, oats, and a pinch of cinnamon. A natural, vegetarian protein shake without additives or artificial flavours.",
           recommended: "Whey",
         },
         {
           name: "Soups, Dough & More",
-          detail: "Use whey in soups, curries, or kneading dough.",
+          detail:
+            "Whey is not just for shakes—use it to cook lentils, knead roti dough, or add body to broths. It's nutritious, flavourful, and sustainable.",
           recommended: "Whey",
         },
       ],
@@ -92,28 +100,27 @@ const Recipes = () => {
   ];
 
   return (
-    <div className="bg-white text-gray-800 py-15">
+    <div className="bg-white text-gray-800 pt-15">
       <PageBanner title="Recipes" />
 
-      {/* Hero */}
-      {/* <section
-        className="text-center py-24 px-6 md:px-16"
-        style={{
-          backgroundImage:
-            "linear-gradient(90deg, #c8f0a5, #d0f5b1, #d8f9bd, #e0feca, #e8ffd6)",
-        }}
-      >
-        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6">
-          🍴 Recipes
-        </h1>
-        <p className="max-w-3xl mx-auto text-lg md:text-xl text-gray-700 leading-relaxed">
+      {/* Intro Section */}
+      <section className="py-16 px-6 md:px-16 bg-gradient-to-r from-green-50 to-green-100 text-center">
+        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
           Traditional favourites. Modern kitchens. Ingredients you trust.
+        </h2>
+        <p className="max-w-3xl mx-auto text-gray-700 text-lg leading-relaxed">
+          At the heart of Indian cooking lies a deep connection to home,
+          heritage, and nourishment. With our fresh, UK-made dairy products, you
+          can now recreate the authentic taste of Indian meals — without
+          compromise, and without relying on frozen imports or powdered
+          substitutes.
+          <br />
+          <br />
+          Whether you’re preparing a weekday dinner, hosting friends for a
+          festival, or simply missing a dish your grandmother used to make —
+          we’re here to help bring that moment back to your table.
         </p>
-        <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
-          With our fresh, UK-made dairy products, you can recreate authentic
-          Indian taste — without compromise.
-        </p>
-      </section> */}
+      </section>
 
       {/* Recipe Sections */}
       {recipeCategories.map((cat, i) => (
@@ -134,9 +141,9 @@ const Recipes = () => {
             {cat.items.map((item, j) => (
               <div
                 key={j}
-                className="p-6 rounded-2xl bg-white/70 border shadow-md backdrop-blur-sm hover:shadow-2xl hover:scale-[1.02] transition transform duration-300"
+                className="group p-6 rounded-2xl bg-white/70 border shadow-md backdrop-blur-sm hover:shadow-2xl hover:scale-[1.02] transition transform duration-300"
               >
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                <h3 className="text-lg font-semibold text-gray-800 mb-2 group-hover:text-green-600 transition-colors duration-300">
                   {j + 1}. {item.name}
                 </h3>
                 <p className="text-gray-600 mb-3 text-sm leading-relaxed">
@@ -173,12 +180,12 @@ const Recipes = () => {
           family kitchen? Email us or tag us on Instagram — we’d love to share
           your story with our community.
         </p>
-        <a
-          href="mailto:info@dairybrand.com"
-          className="inline-block bg-green-500 hover:bg-green-600 px-10 py-4 rounded-full font-semibold text-white shadow-lg transition transform hover:-translate-y-1"
+        <Link
+          to="/contact" // 'to' attribute set to the contact page URL
+          className="inline-block bg-green-500 hover:bg-green-600 px-10 py-4 rounded-full font-semibold text-white shadow-lg transition transform hover:-translate-y-1 cursor-pointer z-10"
         >
           ✨ Share Your Recipe
-        </a>
+        </Link>
       </section>
     </div>
   );

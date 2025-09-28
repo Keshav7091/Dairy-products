@@ -10,6 +10,7 @@ import AboutPage from '../src/pages/AboutPage'
 import Recipes from './pages/Recipes';
 import Products from './pages/Products';
 import Services from './pages/Services';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
 
       {/* Footer is visible on all pages */}
       <Footer />
+      <ScrollToTop />
     </div>
   )
 }

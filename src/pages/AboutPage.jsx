@@ -5,6 +5,8 @@ import HowWereDifferent from "../components/About/HowDIffUS"; // Your existing c
 import CustomButton from "../components/CustomButton";
 import OurValues from "../components/About/OurValues";
 
+import { Star, Leaf, Factory, Truck } from "lucide-react";
+
 const AboutPage = () => {
   return (
     <div className="bg-gray-50 py-15">
@@ -47,13 +49,72 @@ const AboutPage = () => {
           </div>
 
           {/* Right Image */}
-          <div className="md:w-1/2 relative">
+          {/* <div className="md:w-1/2 relative">
             <img
               src="/about/02.jpg"
               alt="Dairy Products"
               className="rounded-3xl shadow-2xl object-cover w-full h-full"
             />
+          </div> */}
+
+          <div className="md:w-1/2 mt-10 md:mt-0 order-1 md:order-2 flex flex-col">
+          {/* Image */}
+          <img
+            src="/home/04.jpg"
+            alt="Welcome to Our Gowala Dairy Farm"
+            className="w-full rounded-lg shadow-2xl mb-8"
+          />
+
+          {/* --- FEATURE ICONS SECTION (Modified for Right Block) --- */}
+          {/* Ismein maine border-top, padding aur grid laya hai, jaisa ki aapke code mein tha */}
+          <div className="w-full pt-8 border-t border-gray-200">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+              {/* Feature 1: 20 Years of Experience */}
+              <div className="flex flex-col items-center group cursor-pointer p-2 transition duration-300">
+                <div className="text-5xl text-green-600 mb-3 transition duration-300 transform group-hover:scale-110">
+                  {/* Star icon with zoom hover */}
+                  <Star size={50} strokeWidth={1} />
+                </div>
+                <p className="text-sm font-semibold text-gray-800">
+                  20 Years of Experience
+                </p>
+              </div>
+
+              {/* Feature 2: Natural & Organic */}
+              <div className="flex flex-col items-center group cursor-pointer p-2 transition duration-300">
+                <div className="text-5xl text-green-600 mb-3 transition duration-300 transform group-hover:scale-110">
+                  {/* Leaf icon with zoom hover */}
+                  <Leaf size={50} strokeWidth={1} />
+                </div>
+                <p className="text-sm font-semibold text-gray-800">
+                  Natural & Organic
+                </p>
+              </div>
+
+              {/* Feature 3: Modern Technique */}
+              <div className="flex flex-col items-center group cursor-pointer p-2 transition duration-300">
+                <div className="text-5xl text-green-600 mb-3 transition duration-300 transform group-hover:scale-110">
+                  {/* Factory icon with zoom hover */}
+                  <Factory size={50} strokeWidth={1} />
+                </div>
+                <p className="text-sm font-semibold text-gray-800">
+                  Modern Technique
+                </p>
+              </div>
+
+              {/* Feature 4: Milk Farm Factory */}
+              <div className="flex flex-col items-center group cursor-pointer p-2 transition duration-300">
+                <div className="text-5xl text-green-600 mb-3 transition duration-300 transform group-hover:scale-110">
+                  {/* Truck icon with zoom hover */}
+                  <Truck size={50} strokeWidth={1} />
+                </div>
+                <p className="text-sm font-semibold text-gray-800">
+                  Milk Farm Factory
+                </p>
+              </div>
+            </div>
           </div>
+        </div>
         </div>
       </section>
 
@@ -62,7 +123,7 @@ const AboutPage = () => {
       <HowWereDifferent />
 
       {/* Sustainability Section */}
-      <div className="max-w-6xl mx-auto bg-white p-8 md:p-16 rounded-3xl shadow-lg">
+      <div className="max-w-6xl container p-8 md:p-16 rounded-3xl ">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 text-center">
           Sustainability
         </h2>
@@ -158,7 +219,7 @@ const AboutPage = () => {
               </div>
               <CustomButton
                 text="Learn More"
-                link="/contact"
+                link="/recipes"
                 className="mt-6 inline-flex items-center gap-2 bg-green-500 text-white hover:bg-green-600"
               />
             </div>
