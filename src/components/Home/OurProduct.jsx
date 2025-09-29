@@ -8,7 +8,7 @@ const products = [
     id: 1,
     name: "Paneer - Malai",
     category: "Paneer",
-    image: "/products/01.png",
+    image: "/products/04.jpg",
     rating: 5,
     reviews: 2,
     price: 45.99,
@@ -18,7 +18,7 @@ const products = [
     id: 2,
     name: "Whey Protein",
     category: "Protein",
-    image: "/products/02.png",
+    image: "/products/05.png",
     rating: 4,
     reviews: 3,
     price: 45.99,
@@ -38,7 +38,7 @@ const products = [
     id: 4,
     name: "White Butter",
     category: "Butter",
-    image: "/products/04.png",
+    image: "/products/01.png",
     rating: 3,
     reviews: 2,
     price: 45.99,
@@ -93,11 +93,6 @@ const ProductCard = ({ product, idx }) => (
         ${product.price.toFixed(2)}
       </p>
     </div>
-    <div className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-      <button className="px-4 py-2 bg-green-500 text-white rounded-md shadow-lg hover:bg-green-600 transition">
-        View Product
-      </button>
-    </div>
   </motion.div>
 );
 
@@ -106,7 +101,7 @@ const CarouselCard = ({ product, height }) => (
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.5 }}
-    className="relative bg-white rounded-xl shadow-lg overflow-hidden"
+    className="relative bg-white rounded-xl shadow-lg overflow-hidden flex flex-col items-center justify-center"
     style={{ height: `${height}px` }}
   >
     {product.discount && (
@@ -114,14 +109,16 @@ const CarouselCard = ({ product, height }) => (
         -{product.discount}
       </span>
     )}
-    <div className="h-full flex flex-col items-center justify-center p-4">
+    <div className="flex flex-col items-center justify-center h-full p-4">
       <img
         src={product.image}
         alt={product.name}
         loading="lazy"
-        className="max-h-64 object-contain mb-4"
+        className="w-full h-72 object-contain mb-4"
       />
-      <h4 className="text-2xl font-bold text-gray-800 mb-1">{product.name}</h4>
+      <h4 className="text-2xl font-bold text-gray-800 mb-1 text-center">
+        {product.name}
+      </h4>
       <StarRating rating={product.rating} />
       <span className="text-sm text-gray-500 mb-2">
         ({product.reviews} Reviews)
@@ -208,7 +205,7 @@ const OurProduct = () => {
               </div>
             ))}
           </div>
-          <div className="flex-1 flex justify-center items-start">
+          <div className="flex-1 hidden lg:flex justify-center items-start">
             {carouselHeight > 0 && (
               <ProductCarousel
                 products={products}

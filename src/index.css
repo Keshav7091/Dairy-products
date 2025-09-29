@@ -18,6 +18,33 @@ body {
   @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
 }
 
+@layer utilities {
+  .bg-green-gradient {
+    background-image: linear-gradient(
+      to right,
+      #64a019,
+      #6ca821,
+      #73b128,
+      #7bb92f,
+      #83c236
+    );
+  }
+
+  .text-green-gradient {
+    background: linear-gradient(
+      to right,
+      #64a019,
+      #6ca821,
+      #73b128,
+      #7bb92f,
+      #83c236
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+
 
 /* Background image */
 .bg-image {

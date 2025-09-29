@@ -6,7 +6,7 @@ import CustomButton from "../components/CustomButton";
 const products = [
   {
     name: "Paneer – Malai (Creamy Style)",
-    image: "/products/paneer-malai.jpg",
+    image: "/products/04.jpg",
     sizes: ["200g", "500g", "1000g vacuum-sealed blocks"],
     description:
       "Our Malai Paneer is soft, rich, and indulgent—perfect for special curries like shahi paneer, malai kofta, or paneer butter masala. Made with full-fat milk and minimal processing, it holds shape during cooking but melts in the mouth when eaten.",
@@ -18,7 +18,7 @@ const products = [
   },
   {
     name: "Paneer – Low Fat (High Protein)",
-    image: "/products/paneer-lowfat.jpg",
+    image: "/products/06.jpg",
     sizes: ["200g", "500g", "1000g vacuum-sealed blocks"],
     description:
       "This is the versatile, everyday paneer used in households and professional kitchens alike. Firm enough for grilling or frying, yet tender enough for bhurji, paratha stuffing, or salads. Fits the bill for calorie conscious consumers.",
@@ -30,7 +30,7 @@ const products = [
   },
   {
     name: "Khoya (Mawa)",
-    image: "/products/khoya.jpg",
+    image: "/products/03.png",
     sizes: ["200g", "500g blocks (granular or smooth)"],
     description:
       "Khoya is slow-cooked from fresh milk—never reconstituted—giving it a rich, caramelised texture perfect for gulab jamun, barfi, pedas, and halwa.",
@@ -42,7 +42,7 @@ const products = [
   },
   {
     name: "Whey Protein",
-    image: "/products/whey-protein.jpg",
+    image: "/products/05.png",
     sizes: ["500ml bottle", "1L pouch"],
     price: "£3.75 (500ml) | £6.50 (1L)",
     description:
@@ -55,7 +55,7 @@ const products = [
   },
   {
     name: "White Butter (Unsalted, Cow’s Milk)",
-    image: "/products/white-butter.jpg",
+    image: "/products/01.png",
     sizes: ["200g", "500g tubs"],
     description:
       "Hand-churned from fresh cream, this unsalted white butter is inspired by the traditional Indian ‘makhan’.",
@@ -69,7 +69,7 @@ const products = [
 
 const Products = () => {
   return (
-    <div className="bg-gray-50 py-16">
+    <div className="bg-gray-50 py-15">
       <PageBanner title="Products" />
 
       <div className="container pt-10">

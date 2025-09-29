@@ -65,7 +65,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="pt-20">
+    <div className="pt-15">
       <PageBanner title="Contact Us" />
 
       <Toaster position="top-right" reverseOrder={false} />

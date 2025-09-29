@@ -11,7 +11,7 @@ const defaultContent = {
 };
 
 // --- Slide Images ---
-const slideImages = ["/home/03.jpg", "/home/02.jpg"];
+const slideImages = ["/home/05.png", "/home/06.png"];
 
 // --- Mobile Detection Hook ---
 const useIsMobile = (breakpoint = 768) => {
@@ -64,7 +64,7 @@ const Hero = () => {
         {slideImages.map((bg, index) => (
           <div
             key={index}
-            className="w-full h-full flex-shrink-0 relative bg-center bg-cover"
+            className="w-full h-full flex-shrink-0 relative bg-center bg-cover bg-no-repeat"
             style={{ backgroundImage: `url(${bg})` }}
           >
             <div className="absolute inset-0 bg-black/30"></div>
@@ -82,7 +82,7 @@ const Hero = () => {
             transition={{ duration: 1, ease: "easeOut" }}
             className="max-w-full md:max-w-xl text-center md:text-left"
           >
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-white leading-tight">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-[#FFFFFF] leading-tight">
               {defaultContent.title}
             </h1>
             <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg lg:text-xl text-white">
