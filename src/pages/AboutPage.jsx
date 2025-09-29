@@ -60,7 +60,7 @@ const AboutPage = () => {
           <div className="md:w-1/2 mt-10 md:mt-0 order-1 md:order-2 flex flex-col">
           {/* Image */}
           <img
-            src="/home/04.jpg"
+            src="/home/06.jpg"
             alt="Welcome to Our Gowala Dairy Farm"
             className="w-full rounded-lg shadow-2xl mb-8"
           />

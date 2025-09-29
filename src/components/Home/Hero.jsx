@@ -11,7 +11,7 @@ const defaultContent = {
 };
 
 // --- Slide Images ---
-const slideImages = ["/home/05.png", "/home/06.png"];
+const slideImages = ["/home/02.jpg", "/home/03.jpg"];
 
 // --- Mobile Detection Hook ---
 const useIsMobile = (breakpoint = 768) => {
@@ -64,7 +64,7 @@ const Hero = () => {
         {slideImages.map((bg, index) => (
           <div
             key={index}
-            className="w-full h-full flex-shrink-0 relative bg-center bg-cover bg-no-repeat"
+            className="w-full h-full flex-shrink-0 relative bg-cover bg-center bg-no-repeat"
             style={{ backgroundImage: `url(${bg})` }}
           >
             <div className="absolute inset-0 bg-black/30"></div>

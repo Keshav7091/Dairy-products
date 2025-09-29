@@ -11,17 +11,17 @@ const PageBanner = ({ title }) => {
       <div
         className="absolute inset-0 bg-cover bg-center z-0"
         style={{
-          backgroundImage: "url(/page-banner.jpg)",
+          backgroundImage: "url(/home/04.png)",
         }}
       ></div>
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/35 z-10"></div>
+      <div className="absolute inset-0 bg-black/20 z-10"></div>
 
       {/* Content */}
       <div className="relative z-20 flex flex-col items-center justify-center h-full text-center px-4 sm:px-6 lg:px-12 xl:px-20">
         <h1
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-green-400 mb-2"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-2"
           style={{ fontFamily: "Georgia, serif" }}
         >
           {title}
@@ -39,7 +39,7 @@ const PageBanner = ({ title }) => {
               <span key={to} className="flex items-center">
                 <span className="mx-1 sm:mx-2 text-gray-300">/</span>
                 {isLast ? (
-                  <span className="text-green-300 capitalize">
+                  <span className="text-green-400 capitalize">
                     {value.replace("-", " ")}
                   </span>
                 ) : (

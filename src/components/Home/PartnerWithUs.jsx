@@ -32,7 +32,7 @@ const PartnerWithUs = () => {
           <div className="flex-1 relative group perspective">
             <div className="relative bg-white rounded-3xl shadow-2xl p-6 transform transition-transform duration-700 group-hover:rotate-y-6 group-hover:scale-105">
               <img
-                src="/products/08.jfif"
+                src="/home/05.jpg"
                 alt="Partner With Us"
                 className="w-full rounded-2xl shadow-lg object-cover"
               />
