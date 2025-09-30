@@ -24,7 +24,7 @@ const ScrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  // Animation 
+  // Animation
   const animation = {
     initial: { x: 0, y: -300, scale: 0.9, opacity: 0 }, // top se shuru hoga
     animate: {
@@ -48,12 +48,12 @@ const ScrollToTop = () => {
           exit={animation.exit}
           transition={animation.transition}
           className="fixed bottom-6 right-6 z-30 flex items-center justify-center w-14 h-14 rounded-full shadow-2xl
-                     bg-gradient-to-br from-green-600 to-emerald-500 text-white text-lg overflow-visible"
+                     bg-green-gradient text-white text-lg overflow-visible cursor-pointer"
         >
           {/* Decorative shine + glow layers */}
           <span className="absolute inset-0 pointer-events-none rounded-full button-shine" />
           <span className="absolute -inset-px rounded-full ring-0 pointer-events-none button-glow" />
-          <FaArrowUp className="w-5 h-5 z-10" />
+          <FaArrowUp className="w-5 h-5 z-10 " />
         </motion.button>
       )}
     </AnimatePresence>
