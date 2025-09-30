@@ -1,48 +1,62 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { FaArrowUp } from "react-icons/fa";
-import { useLocation } from "react-router-dom";  // Import useLocation from react-router-dom
+import { motion, AnimatePresence } from "framer-motion";
+import { useLocation } from "react-router-dom";
 
 const ScrollToTop = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const location = useLocation();  // To track route changes
+  const [visible, setVisible] = useState(false);
+  const { pathname } = useLocation();
 
-  // Show button when scrolled down
+  // Show button after scroll
   useEffect(() => {
-    const toggleVisibility = () => {
-      if (window.scrollY > 300) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
-    };
-    window.addEventListener("scroll", toggleVisibility);
-    return () => window.removeEventListener("scroll", toggleVisibility);
+    const onScroll = () => setVisible(window.scrollY > 300);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Scroll to top smoothly
+  // Automatic scroll to top on route change
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [pathname]);
+
+  // Button click scroll
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  // Scroll to top on route change
-  useEffect(() => {
-    scrollToTop();  // Automatically scroll to top when route changes
-  }, [location]);
+  // Animation 
+  const animation = {
+    initial: { x: 0, y: -300, scale: 0.9, opacity: 0 }, // top se shuru hoga
+    animate: {
+      x: 0,
+      y: 0, // apne original place pe aa jayega
+      scale: [0.9, 1.05, 1],
+      opacity: [0, 1, 1],
+    },
+    exit: { x: 0, y: -300, scale: 0.9, opacity: 0 }, // fir se top ki taraf jayega
+    transition: { duration: 0.8, ease: "easeOut" },
+  };
 
   return (
-    <div>
-      {isVisible && (
-        <button
+    <AnimatePresence>
+      {visible && (
+        <motion.button
+          key="scroll-btn"
           onClick={scrollToTop}
-          className="fixed bottom-6 right-6 bg-gray-500 text-white p-3 shadow-lg hover:bg-medical-gradient transition transform hover:scale-110"
+          initial={animation.initial}
+          animate={animation.animate}
+          exit={animation.exit}
+          transition={animation.transition}
+          className="fixed bottom-6 right-6 z-30 flex items-center justify-center w-14 h-14 rounded-full shadow-2xl
+                     bg-gradient-to-br from-green-600 to-emerald-500 text-white text-lg overflow-visible"
         >
-          <FaArrowUp className="w-5 h-5" />
-        </button>
+          {/* Decorative shine + glow layers */}
+          <span className="absolute inset-0 pointer-events-none rounded-full button-shine" />
+          <span className="absolute -inset-px rounded-full ring-0 pointer-events-none button-glow" />
+          <FaArrowUp className="w-5 h-5 z-10" />
+        </motion.button>
       )}
-    </div>
+    </AnimatePresence>
   );
 };
 

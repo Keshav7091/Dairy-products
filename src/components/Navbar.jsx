@@ -9,16 +9,22 @@ const Navbar = () => {
     { name: "About", path: "/about" },
     { name: "Services", path: "/services" },
     { name: "Products", path: "/products" },
-    {name: "Recipes", path: "/recipes"},
+    { name: "Recipes", path: "/recipes" },
     { name: "Contact", path: "/contact" },
   ];
 
   return (
-    <nav className="bg-white shadow-md fixed w-full z-50">
-      <div className="container flex justify-between items-center py-4">
+    <nav className="bg-white shadow-md fixed w-full z-50 py-4">
+      <div className="container flex justify-between items-center ">
         {/* Logo */}
         <NavLink to="/">
-          <img src="/logo.png" alt="Gowala Logo" className="h-10" />
+          <div className="h-16 w-auto flex items-center">
+            <img
+              src="/logo.jpg"
+              alt="Cow Choice"
+              className="max-h-full w-auto object-contain"
+            />
+          </div>
         </NavLink>
 
         {/* Desktop Menu */}

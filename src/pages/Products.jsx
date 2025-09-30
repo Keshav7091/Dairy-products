@@ -42,7 +42,7 @@ const products = [
   },
   {
     name: "Whey Protein",
-    image: "/products/05.png",
+    image: "/products/05.jpg",
     sizes: ["500ml bottle", "1L pouch"],
     price: "£3.75 (500ml) | £6.50 (1L)",
     description:
@@ -55,7 +55,7 @@ const products = [
   },
   {
     name: "White Butter (Unsalted, Cow’s Milk)",
-    image: "/products/01.png",
+    image: "/products/01.jpg",
     sizes: ["200g", "500g tubs"],
     description:
       "Hand-churned from fresh cream, this unsalted white butter is inspired by the traditional Indian ‘makhan’.",

@@ -7,7 +7,7 @@ import CustomButton from "../CustomButton";
 const RecipeInspiration = () => {
   const recipes = [
     { name: "Palak Paneer", image: "/products/04.jpg" },
-    { name: "Gulab Jamun", image: "/products/02.webp" },
+    { name: "Gulab Jamun", image: "/products/02.jpg" },
     { name: "Paneer Tikka Wrap", image: "/products/07.avif" },
   ];
 

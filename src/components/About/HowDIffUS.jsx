@@ -21,9 +21,9 @@ const HowDIffUS = () => {
         {/* Left: Image */}
         <div className="md:w-1/2 mb-8 md:mb-0">
           <img
-            src="/about/01.jpg"
-            alt="Dairy Production"
-            className="rounded-2xl shadow-2xl object-cover w-full h-full"
+            src="/about/03.jfif"
+            alt="Cows Choice"
+            className="rounded-2xl shadow-2xl object-cover w-full h-[65vh]"
           />
         </div>
 

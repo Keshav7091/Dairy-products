@@ -48,72 +48,14 @@ const AboutPage = () => {
             </p>
           </div>
 
-          {/* Right Image */}
-          {/* <div className="md:w-1/2 relative">
-            <img
-              src="/about/02.jpg"
-              alt="Dairy Products"
-              className="rounded-3xl shadow-2xl object-cover w-full h-full"
-            />
-          </div> */}
 
           <div className="md:w-1/2 mt-10 md:mt-0 order-1 md:order-2 flex flex-col">
           {/* Image */}
           <img
-            src="/home/06.jpg"
+            src="/home/06.jfif"
             alt="Welcome to Our Gowala Dairy Farm"
             className="w-full rounded-lg shadow-2xl mb-8"
           />
-
-          {/* --- FEATURE ICONS SECTION (Modified for Right Block) --- */}
-          {/* Ismein maine border-top, padding aur grid laya hai, jaisa ki aapke code mein tha */}
-          <div className="w-full pt-8 border-t border-gray-200">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-              {/* Feature 1: 20 Years of Experience */}
-              <div className="flex flex-col items-center group cursor-pointer p-2 transition duration-300">
-                <div className="text-5xl text-green-600 mb-3 transition duration-300 transform group-hover:scale-110">
-                  {/* Star icon with zoom hover */}
-                  <Star size={50} strokeWidth={1} />
-                </div>
-                <p className="text-sm font-semibold text-gray-800">
-                  20 Years of Experience
-                </p>
-              </div>
-
-              {/* Feature 2: Natural & Organic */}
-              <div className="flex flex-col items-center group cursor-pointer p-2 transition duration-300">
-                <div className="text-5xl text-green-600 mb-3 transition duration-300 transform group-hover:scale-110">
-                  {/* Leaf icon with zoom hover */}
-                  <Leaf size={50} strokeWidth={1} />
-                </div>
-                <p className="text-sm font-semibold text-gray-800">
-                  Natural & Organic
-                </p>
-              </div>
-
-              {/* Feature 3: Modern Technique */}
-              <div className="flex flex-col items-center group cursor-pointer p-2 transition duration-300">
-                <div className="text-5xl text-green-600 mb-3 transition duration-300 transform group-hover:scale-110">
-                  {/* Factory icon with zoom hover */}
-                  <Factory size={50} strokeWidth={1} />
-                </div>
-                <p className="text-sm font-semibold text-gray-800">
-                  Modern Technique
-                </p>
-              </div>
-
-              {/* Feature 4: Milk Farm Factory */}
-              <div className="flex flex-col items-center group cursor-pointer p-2 transition duration-300">
-                <div className="text-5xl text-green-600 mb-3 transition duration-300 transform group-hover:scale-110">
-                  {/* Truck icon with zoom hover */}
-                  <Truck size={50} strokeWidth={1} />
-                </div>
-                <p className="text-sm font-semibold text-gray-800">
-                  Milk Farm Factory
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
         </div>
       </section>
@@ -227,7 +169,7 @@ const AboutPage = () => {
 
           <div className="md:w-1/2 order-1 md:order-2">
             <img
-              src="/about/01.jpg"
+              src="/about/01.jfif"
               alt="Production"
               className="rounded-3xl shadow-2xl transform md:-rotate-3 w-full"
             />
@@ -238,7 +180,7 @@ const AboutPage = () => {
         <div className="relative flex flex-col md:flex-row items-center md:gap-16 bg-gray-50 p-10 rounded-3xl">
           <div className="md:w-1/2">
             <img
-              src="/about/02.jpg"
+              src="/about/02.jfif"
               alt="Ethics"
               className="rounded-3xl shadow-xl transform md:rotate-3 w-full"
             />
