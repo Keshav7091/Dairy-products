@@ -6,7 +6,7 @@ import CustomButton from "../components/CustomButton";
 const products = [
   {
     name: "Paneer – Malai (Creamy Style)",
-    image: "/products/04.jpg",
+    image: "/products/08.jfif",
     sizes: ["200g", "500g", "1000g vacuum-sealed blocks"],
     description:
       "Our Malai Paneer is soft, rich, and indulgent—perfect for special curries like shahi paneer, malai kofta, or paneer butter masala. Made with full-fat milk and minimal processing, it holds shape during cooking but melts in the mouth when eaten.",
