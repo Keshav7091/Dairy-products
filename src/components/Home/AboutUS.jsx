@@ -8,14 +8,17 @@ const AboutUS = () => {
       <div className="container mx-auto px-6 lg:px-12 xl:px-20 flex flex-col md:flex-row items-start gap-10">
         {/* ⬅️ Left Content Block */}
         <div className="md:w-1/2 order-2 md:order-1">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-2 font-sans">
-            About us
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-2 font-sans text-center md:text-left">
+            About Us
           </h2>
           <h3
-            className="text-3xl md:text-5xl text-gray-900 leading-tight mb-6"
+            className="text-4xl sm:text-5xl md:text-5xl text-gray-900 leading-snug mb-6 text-center md:text-left "
             style={{ fontFamily: "Georgia, serif" }}
           >
-            Welcome to Cows Choice
+            Welcome to{" "}
+            <span className="block md:inline text-green-600 font-extrabold">
+              Cows Choice
+            </span>
           </h3>
 
           <p className="text-gray-600 mb-4 md:mb-6 leading-relaxed text-sm md:text-base">

@@ -19,10 +19,11 @@ const AboutPage = () => {
           {/* Left Content */}
           <div className="md:w-1/2 mb-10 md:mb-0 relative">
             <h3
-              className="text-4xl md:text-5xl text-gray-900 leading-tight mb-6 whitespace-nowrap"
+              className="text-2xl sm:text-3xl md:text-5xl text-gray-900 leading-snug mb-6 text-left md:text-left whitespace-nowrap"
               style={{ fontFamily: "Georgia, serif" }}
             >
-              Welcome to Cows Choice
+              Welcome to{" "}
+              <span className="text-green-600 font-extrabold">Cows Choice</span>
             </h3>
 
             <p className="text-gray-700 text-lg mb-4">
