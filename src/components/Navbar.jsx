@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { NavLink } from "react-router-dom";
+import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const navRef = useRef(null);
 
   const navLinks = [
     { name: "Home", path: "/" },
@@ -13,9 +15,23 @@ const Navbar = () => {
     { name: "Contact", path: "/contact" },
   ];
 
+  // Close mobile menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (navRef.current && !navRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
-    <nav className="bg-white shadow-md fixed w-full z-50 py-4">
-      <div className="container flex justify-between items-center ">
+    <nav className="bg-white shadow-md fixed w-full z-50" ref={navRef}>
+      <div className="container flex justify-between items-center px-6 md:px-0 py-4">
         {/* Logo */}
         <NavLink to="/">
           <div className="h-16 w-auto flex items-center">
@@ -83,8 +99,13 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu */}
-      {isOpen && (
-        <ul className="md:hidden bg-white shadow-md py-4 space-y-4 px-6">
+      <div
+        className={`md:hidden bg-white shadow-md px-6 overflow-hidden transition-all duration-500 ease-in-out ${
+          isOpen ? "max-h-[500px] py-4" : "max-h-0 py-0"
+        }`}
+      >
+        {/* Nav Links */}
+        <ul className="space-y-4">
           {navLinks.map((link) => (
             <li key={link.name}>
               <NavLink
@@ -99,7 +120,35 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
-      )}
+
+        {/* Mobile Social Icons */}
+        <div className="flex justify-center space-x-4 mt-4">
+          <a
+            href="https://www.facebook.com/yourhandle"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-blue-600 text-white w-10 h-10 flex items-center justify-center rounded-full shadow-lg hover:bg-blue-700 transition"
+          >
+            <FaFacebookF />
+          </a>
+          <a
+            href="https://www.instagram.com/yourhandle"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-pink-500 text-white w-10 h-10 flex items-center justify-center rounded-full shadow-lg hover:bg-pink-600 transition"
+          >
+            <FaInstagram />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/yourhandle"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-blue-700 text-white w-10 h-10 flex items-center justify-center rounded-full shadow-lg hover:bg-blue-800 transition"
+          >
+            <FaLinkedinIn />
+          </a>
+        </div>
+      </div>
     </nav>
   );
 };

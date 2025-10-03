@@ -11,6 +11,8 @@ import Recipes from './pages/Recipes';
 import Products from './pages/Products';
 import Services from './pages/Services';
 import ScrollToTop from './components/ScrollToTop';
+import ProductDetail from "./pages/ProductDetail";
+import SocialFloating from './components/SocialFloating';
 
 function App() {
 
@@ -18,6 +20,7 @@ function App() {
     <div className="font-sans">
       {/* Navbar is visible on all pages */}
       <Navbar />
+      <SocialFloating />
 
       {/* Routes */}
       <Routes>
@@ -26,6 +29,7 @@ function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path='/recipes' element={ <Recipes /> } />
         <Route path='/products' element={ <Products /> } /> 
+        <Route path="/products/:id" element={<ProductDetail />} />
         <Route path='/services' element={ <Services /> } />
       </Routes>
 

@@ -44,7 +44,6 @@ const products = [
     name: "Whey Protein",
     image: "/products/05.jpg",
     sizes: ["500ml bottle", "1L pouch"],
-    price: "£3.75 (500ml) | £6.50 (1L)",
     description:
       "Extracted naturally during the paneer-making process, our whey protein is a clean, vegetarian source of nutrition. Rich in amino acids, easy to digest, and completely free from additives.",
     features: [
@@ -73,74 +72,66 @@ const Products = () => {
       <PageBanner title="Products" />
 
       <div className="container pt-10">
-
-      {/* Products Header */}
-      <div className="max-w-6xl mx-auto text-center mb-12">
-        <h2 className="text-xl font-bold text-gray-800 mb-2 font-sans text-center">
-          Our Product
-        </h2>
-        <h3
-          className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-4 text-center"
-          style={{ fontFamily: "Georgia, serif" }}
-        >
-          We Provided the Best Product
-        </h3>
-        <p className="text-gray-700 text-lg md:text-xl">
-          Authentic Indian dairy made fresh in the UK.
-        </p>
-      </div>
-
-      {/* Products Grid */}
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 mb-16">
-        {products.map((product, i) => (
-          <div
-            key={i}
-            className="bg-green-50 p-6 rounded-3xl shadow-md hover:shadow-2xl hover:scale-105 transition transform duration-300 border border-transparent hover:border-green-300 group"
+        {/* Products Header */}
+        <div className="max-w-6xl mx-auto text-center mb-12">
+          <h2 className="text-xl font-bold text-gray-800 mb-2 font-sans text-center">
+            Our Product
+          </h2>
+          <h3
+            className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-4 text-center"
+            style={{ fontFamily: "Georgia, serif" }}
           >
-            {/* Product Image */}
-            <div className="w-full h-48 mb-4 overflow-hidden rounded-2xl">
-              <img
-                src={product.image}
-                alt={product.name}
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-              />
-            </div>
+            We Provided the Best Product
+          </h3>
+          <p className="text-gray-700 text-lg md:text-xl">
+            Authentic Indian dairy made fresh in the UK.
+          </p>
+        </div>
 
-            {/* Product Name */}
-            <h2 className="text-2xl font-bold text-gray-900 mb-2 transition-colors duration-300 group-hover:text-green-700">
-              {product.name}
-            </h2>
+        {/* Products Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 mb-16">
+          {products.map((product, i) => (
+            <div
+              key={i}
+              className="bg-green-50 p-6 rounded-3xl shadow-md hover:shadow-2xl hover:scale-105 transition transform duration-300 border border-transparent hover:border-green-300 group"
+            >
+              {/* Product Image */}
+              <div className="w-full h-48 mb-4 overflow-hidden rounded-2xl">
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+              </div>
 
-            {/* Price */}
-            {product.price && (
-              <p className="text-green-700 font-semibold mb-2">
-                {product.price}
+              {/* Product Name */}
+              <h2 className="text-2xl font-bold text-gray-900 mb-2 transition-colors duration-300 group-hover:text-green-700">
+                {product.name}
+              </h2>
+
+              {/* Description */}
+              <p className="text-gray-700 mb-4">{product.description}</p>
+
+              {/* Pack Sizes */}
+              <p className="font-medium text-gray-900 mb-3">
+                Pack Size: {product.sizes.join(" , ")}
               </p>
-            )}
 
-            {/* Description */}
-            <p className="text-gray-700 mb-4">{product.description}</p>
+              {/* Features with icons */}
+              <ul className="space-y-2 mb-4">
+                {product.features.map((feature, idx) => (
+                  <li key={idx} className="flex items-start gap-2 text-gray-700">
+                    <FiCheck className="text-green-600 mt-1" />
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
 
-            {/* Pack Sizes */}
-            <p className="font-medium text-gray-900 mb-3">
-              Pack Size: {product.sizes.join(" , ")}
-            </p>
-
-            {/* Features with icons */}
-            <ul className="space-y-2 mb-4">
-              {product.features.map((feature, idx) => (
-                <li key={idx} className="flex items-start gap-2 text-gray-700">
-                  <FiCheck className="text-green-600 mt-1" />
-                  <span>{feature}</span>
-                </li>
-              ))}
-            </ul>
-
-            {/* CTA Button */}
-            <CustomButton text="Order Now" link="/contact" />
-          </div>
-        ))}
-      </div>
+              {/* CTA Button */}
+              <CustomButton text="Order Now" link="/contact" />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

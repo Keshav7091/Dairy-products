@@ -18,9 +18,13 @@ const AboutPage = () => {
         <div className="max-w-6xl mx-auto md:flex md:items-center md:gap-16 relative">
           {/* Left Content */}
           <div className="md:w-1/2 mb-10 md:mb-0 relative">
-            <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6">
-              Welcome to Gowala
-            </h2>
+            <h3
+              className="text-4xl md:text-5xl text-gray-900 leading-tight mb-6 whitespace-nowrap"
+              style={{ fontFamily: "Georgia, serif" }}
+            >
+              Welcome to Cows Choice
+            </h3>
+
             <p className="text-gray-700 text-lg mb-4">
               We’re a UK-based dairy brand bringing authentic Indian flavours to
               your table. Our products are made in carefully curated batches

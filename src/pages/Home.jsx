@@ -8,7 +8,7 @@ import PartnerWithUs from '../components/Home/PartnerWithUs'
 
 const Home = () => {
   return (
-    <div>
+    <div className='pt-10'>
       <Hero />
       <AboutUS />
       <OurProduct />

@@ -2,49 +2,10 @@ import React, { useState, useEffect, useRef } from "react";
 import { Star } from "lucide-react";
 import { motion } from "framer-motion";
 import CustomButton from "../CustomButton";
+import { products } from "../../data/products";
+import { Link } from "react-router-dom";
 
-const products = [
-  {
-    id: 1,
-    name: "Paneer - Malai",
-    category: "Paneer",
-    image: "/products/04.jpg",
-    rating: 5,
-    reviews: 2,
-    price: 45.99,
-    discount: "20%",
-  },
-  {
-    id: 2,
-    name: "Whey Protein",
-    category: "Protein",
-    image: "/products/05.jpg",
-    rating: 4,
-    reviews: 3,
-    price: 45.99,
-    discount: null,
-  },
-  {
-    id: 3,
-    name: "Khoya (Mawa)",
-    category: "Khoya",
-    image: "/products/03.png",
-    rating: 5,
-    reviews: 1,
-    price: 99.99,
-    discount: "20%",
-  },
-  {
-    id: 4,
-    name: "White Butter",
-    category: "Butter",
-    image: "/products/01.jpg",
-    rating: 3,
-    reviews: 2,
-    price: 45.99,
-    discount: null,
-  },
-];
+
 
 const StarRating = ({ rating, totalStars = 5 }) => (
   <div className="flex items-center text-yellow-400 justify-center">
@@ -59,7 +20,6 @@ const StarRating = ({ rating, totalStars = 5 }) => (
     ))}
   </div>
 );
-
 const ProductCard = ({ product, idx }) => (
   <motion.div
     initial={{ opacity: 0, y: 40 }}
@@ -68,31 +28,33 @@ const ProductCard = ({ product, idx }) => (
     transition={{ duration: 0.5, delay: idx * 0.1 }}
     className="relative group rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 bg-white"
   >
-    {product.discount && (
-      <span className="absolute top-3 right-3 bg-green-500 text-white text-xs font-semibold px-2 py-1 rounded-full z-10">
-        -{product.discount}
-      </span>
-    )}
-    <div className="overflow-hidden rounded-xl">
-      <img
-        src={product.image}
-        alt={product.name}
-        loading="lazy"
-        className="w-full h-56 object-contain transition-transform duration-500 group-hover:scale-105"
-      />
-    </div>
-    <div className="p-4 text-center">
-      <h4 className="text-lg font-semibold text-gray-800 mb-2 group-hover:text-green-600 transition-colors duration-300">
-        {product.name}
-      </h4>
-      <StarRating rating={product.rating} />
-      <span className="text-sm text-gray-500 ml-1">
-        ({product.reviews} Reviews)
-      </span>
-      <p className="text-xl font-bold text-gray-700 mt-2">
-        ${product.price.toFixed(2)}
-      </p>
-    </div>
+    <Link to={`/products/${product.id}`}>
+      {product.discount && (
+        <span className="absolute top-3 right-3 bg-green-500 text-white text-xs font-semibold px-2 py-1 rounded-full z-10">
+          -{product.discount}
+        </span>
+      )}
+      <div className="overflow-hidden rounded-xl">
+        <img
+          src={product.image}
+          alt={product.name}
+          loading="lazy"
+          className="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+      </div>
+      <div className="p-4 text-center">
+        <h4 className="text-lg font-semibold text-gray-800 mb-2 group-hover:text-green-600 transition-colors duration-300">
+          {product.name}
+        </h4>
+        <StarRating rating={product.rating} />
+        <span className="text-sm text-gray-500 ml-1">
+          ({product.reviews} Reviews)
+        </span>
+        <p className="text-xl font-bold text-gray-700 mt-2">
+          ${product.price.toFixed(2)}
+        </p>
+      </div>
+    </Link>
   </motion.div>
 );
 
@@ -104,17 +66,17 @@ const CarouselCard = ({ product, height }) => (
     className="relative bg-white rounded-xl shadow-lg overflow-hidden flex flex-col items-center justify-center"
     style={{ height: `${height}px` }}
   >
-    {product.discount && (
-      <span className="absolute top-3 right-3 bg-green-500 text-white text-xs font-semibold px-2 py-1 rounded-full z-10">
-        -{product.discount}
-      </span>
-    )}
-    <div className="flex flex-col items-center justify-center h-full p-4">
+    <Link to={`/products/${product.id}`} className="w-full h-full flex flex-col items-center justify-center p-4">
+      {product.discount && (
+        <span className="absolute top-3 right-3 bg-green-500 text-white text-xs font-semibold px-2 py-1 rounded-full z-10">
+          -{product.discount}
+        </span>
+      )}
       <img
         src={product.image}
         alt={product.name}
         loading="lazy"
-        className="w-full h-72 object-contain mb-4"
+        className="w-full h-72 object-cover mb-4"
       />
       <h4 className="text-2xl font-bold text-gray-800 mb-1 text-center">
         {product.name}
@@ -126,9 +88,10 @@ const CarouselCard = ({ product, height }) => (
       <p className="text-2xl font-extrabold text-gray-700">
         ${product.price.toFixed(2)}
       </p>
-    </div>
+    </Link>
   </motion.div>
 );
+
 
 const ProductCarousel = ({ products, cardHeight }) => {
   const [current, setCurrent] = useState(0);
