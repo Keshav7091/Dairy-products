@@ -50,9 +50,9 @@ const ProductCard = ({ product, idx }) => (
         <span className="text-sm text-gray-500 ml-1">
           ({product.reviews} Reviews)
         </span>
-        <p className="text-xl font-bold text-gray-700 mt-2">
+        {/* <p className="text-xl font-bold text-gray-700 mt-2">
           ${product.price.toFixed(2)}
-        </p>
+        </p> */}
       </div>
     </Link>
   </motion.div>
@@ -85,9 +85,9 @@ const CarouselCard = ({ product, height }) => (
       <span className="text-sm text-gray-500 mb-2">
         ({product.reviews} Reviews)
       </span>
-      <p className="text-2xl font-extrabold text-gray-700">
+      {/* <p className="text-2xl font-extrabold text-gray-700">
         ${product.price.toFixed(2)}
-      </p>
+      </p> */}
     </Link>
   </motion.div>
 );
