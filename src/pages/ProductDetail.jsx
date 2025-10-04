@@ -42,9 +42,9 @@ const ProductDetail = () => {
           <span className="text-gray-500 mb-4">
             ({product.reviews} Reviews)
           </span>
-          <p className="text-2xl font-extrabold text-green-700 mb-6">
+          {/* <p className="text-2xl font-extrabold text-green-700 mb-6">
             ${product.price.toFixed(2)}
-          </p>
+          </p> */}
           <p className="text-gray-600 mb-6">
             Lorem ipsum description for {product.name}. Here you can add product
             details, benefits, and features.
