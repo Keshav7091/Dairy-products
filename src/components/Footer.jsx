@@ -15,7 +15,7 @@ const Footer = () => {
       <div className="container mx-auto px-6 lg:px-12 xl:px-20 py-24 grid lg:grid-cols-3 gap-12">
         {/* Brand & About */}
         <div className="space-y-4">
-          <h2 className="text-3xl font-extrabold tracking-wider text-green-gradient">
+          <h2 className="text-3xl font-extrabold tracking-wider text-cow-gradient">
             Cows Choice
           </h2>
           <p className="text-gray-300 text-sm leading-relaxed">
@@ -46,7 +46,7 @@ const Footer = () => {
 
         {/* Quick Links */}
         <div className="space-y-4">
-          <h4 className="text-xl font-bold text-green-gradient mb-3">Explore</h4>
+          <h4 className="text-xl font-bold text-cow-gradient mb-3">Explore</h4>
           <ul className="space-y-2 text-gray-300 text-sm">
             {quickLinks.map((link, index) => (
               <li key={index}>
@@ -63,7 +63,7 @@ const Footer = () => {
 
         {/* Newsletter Card */}
         <div className="bg-gray-800 bg-opacity-70 backdrop-blur-md rounded-3xl p-8 flex flex-col justify-between shadow-lg hover:shadow-2xl transition-shadow duration-500">
-          <h4 className="text-xl font-bold text-green-gradient mb-3">
+          <h4 className="text-xl font-bold text-cow-gradient mb-3">
             Subscribe to Updates
           </h4>
           <p className="text-gray-300 text-sm mb-4">

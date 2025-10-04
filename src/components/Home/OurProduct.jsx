@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 import CustomButton from "../CustomButton";
 import { products } from "../../data/products";
 import { Link } from "react-router-dom";
+import Heading from "../Heading";
 
-
-
+// Star Rating Component
 const StarRating = ({ rating, totalStars = 5 }) => (
   <div className="flex items-center text-yellow-400 justify-center">
     {[...Array(totalStars)].map((_, i) => (
@@ -20,6 +20,8 @@ const StarRating = ({ rating, totalStars = 5 }) => (
     ))}
   </div>
 );
+
+
 const ProductCard = ({ product, idx }) => (
   <motion.div
     initial={{ opacity: 0, y: 40 }}
@@ -30,7 +32,7 @@ const ProductCard = ({ product, idx }) => (
   >
     <Link to={`/products/${product.id}`}>
       {product.discount && (
-        <span className="absolute top-3 right-3 bg-green-500 text-white text-xs font-semibold px-2 py-1 rounded-full z-10">
+        <span className="absolute top-3 right-3 bg-primary text-white text-xs font-semibold px-2 py-1 rounded-full z-10">
           -{product.discount}
         </span>
       )}
@@ -43,21 +45,21 @@ const ProductCard = ({ product, idx }) => (
         />
       </div>
       <div className="p-4 text-center">
-        <h4 className="text-lg font-semibold text-gray-800 mb-2 group-hover:text-green-600 transition-colors duration-300">
+        {/* Title hover color effect */}
+        <h4 className="text-lg font-semibold text-gray-800 mb-2 transition-colors duration-300 group-hover:text-[#fb8c00]">
           {product.name}
         </h4>
         <StarRating rating={product.rating} />
         <span className="text-sm text-gray-500 ml-1">
           ({product.reviews} Reviews)
         </span>
-        {/* <p className="text-xl font-bold text-gray-700 mt-2">
-          ${product.price.toFixed(2)}
-        </p> */}
       </div>
     </Link>
   </motion.div>
 );
 
+
+// Carousel Card for Desktop view
 const CarouselCard = ({ product, height }) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
@@ -66,9 +68,12 @@ const CarouselCard = ({ product, height }) => (
     className="relative bg-white rounded-xl shadow-lg overflow-hidden flex flex-col items-center justify-center"
     style={{ height: `${height}px` }}
   >
-    <Link to={`/products/${product.id}`} className="w-full h-full flex flex-col items-center justify-center p-4">
+    <Link
+      to={`/products/${product.id}`}
+      className="w-full h-full flex flex-col items-center justify-center p-4"
+    >
       {product.discount && (
-        <span className="absolute top-3 right-3 bg-green-500 text-white text-xs font-semibold px-2 py-1 rounded-full z-10">
+        <span className="absolute top-3 right-3 bg-primary text-white text-xs font-semibold px-2 py-1 rounded-full z-10">
           -{product.discount}
         </span>
       )}
@@ -78,21 +83,18 @@ const CarouselCard = ({ product, height }) => (
         loading="lazy"
         className="w-full h-72 object-cover mb-4"
       />
-      <h4 className="text-2xl font-bold text-gray-800 mb-1 text-center">
+      <h4 className="text-2xl font-bold text-gray-800 mb-1 text-center group-hover:text-primary transition-colors duration-300">
         {product.name}
       </h4>
       <StarRating rating={product.rating} />
       <span className="text-sm text-gray-500 mb-2">
         ({product.reviews} Reviews)
       </span>
-      {/* <p className="text-2xl font-extrabold text-gray-700">
-        ${product.price.toFixed(2)}
-      </p> */}
     </Link>
   </motion.div>
 );
 
-
+// Carousel Container
 const ProductCarousel = ({ products, cardHeight }) => {
   const [current, setCurrent] = useState(0);
 
@@ -102,7 +104,7 @@ const ProductCarousel = ({ products, cardHeight }) => {
       4000
     );
     return () => clearInterval(interval);
-  }, []);
+  }, [products.length]);
 
   return (
     <div className="relative w-full sm:w-96">
@@ -125,7 +127,7 @@ const ProductCarousel = ({ products, cardHeight }) => {
             <span
               key={idx}
               className={`h-3 w-3 mx-1 rounded-full cursor-pointer ${
-                idx === current ? "bg-green-600" : "bg-gray-300"
+                idx === current ? "bg-primary" : "bg-gray-300"
               }`}
               onClick={() => setCurrent(idx)}
             />
@@ -136,6 +138,7 @@ const ProductCarousel = ({ products, cardHeight }) => {
   );
 };
 
+// Main OurProduct Section
 const OurProduct = () => {
   const leftCardRef = useRef(null);
   const [carouselHeight, setCarouselHeight] = useState(0);
@@ -147,20 +150,18 @@ const OurProduct = () => {
   }, []);
 
   return (
-    <section className="py-24 bg-gradient-to-b from-green-50 to-white">
+    <section className="py-24">
       <div className="container mx-auto px-6 lg:px-12 xl:px-20">
-        <h2 className="text-xl font-bold text-gray-800 mb-2 text-center">
-          Our Products
-        </h2>
-        <h3 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-4 text-center">
-          We Provide the Best Product
-        </h3>
-        <p className="max-w-2xl mx-auto text-gray-600 mb-12 text-center">
-          Continually productize compelling quality for packed with Elated
-          Themes, setting up website and creating pages.
-        </p>
+        <Heading
+          title="Explore Our Products"
+          subtitle="Fresh. Honest. Full of tradition."
+          align="center"
+          underline={true}
+          className="mb-12"
+        />
 
         <div className="flex flex-col lg:flex-row gap-8">
+          {/* Product Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 flex-1">
             {products.map((product, idx) => (
               <div key={product.id} ref={idx === 0 ? leftCardRef : null}>
@@ -168,16 +169,16 @@ const OurProduct = () => {
               </div>
             ))}
           </div>
+
+          {/* Carousel for Desktop */}
           <div className="flex-1 hidden lg:flex justify-center items-start">
             {carouselHeight > 0 && (
-              <ProductCarousel
-                products={products}
-                cardHeight={carouselHeight}
-              />
+              <ProductCarousel products={products} cardHeight={carouselHeight} />
             )}
           </div>
         </div>
 
+        {/* CTA Button */}
         <div className="flex justify-center mt-12">
           <CustomButton
             text="View All Products"

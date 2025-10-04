@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 
 // --- Common Content ---
 const defaultContent = {
-  title: "Real Indian Dairy. Made Fresh in the UK",
+  title: "Real Indian Dairy in the UK",
   subtitle:
-    "Paneer. Khoya. White Butter. Honest food, done right. Shop Now. Trade Enquiry. Explore Our Story.",
-  btnText: "View Product",
+    "Paneer, Khoya, White Butter, Honest food Explore Our Story.",
+  btnText: "Our Products",
 };
 
 // --- Slide Images ---
@@ -82,15 +82,17 @@ const Hero = () => {
             transition={{ duration: 1, ease: "easeOut" }}
             className="max-w-full md:max-w-xl text-center md:text-left"
           >
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-[#FFFFFF] leading-tight">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-light leading-tight">
               {defaultContent.title}
             </h1>
-            <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg lg:text-xl text-white">
+            <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg lg:text-xl text-light">
               {defaultContent.subtitle}
             </p>
+
+            {/* Updated button colors using theme classes */}
             <Link
               to="/products"
-              className="inline-block mt-4 sm:mt-6 px-4 sm:px-6 py-2 sm:py-3 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-full text-sm sm:text-base md:text-lg transition duration-300"
+              className="btn btn-primary mt-4 sm:mt-6 rounded-full text-sm sm:text-base md:text-lg"
             >
               {defaultContent.btnText}
             </Link>
@@ -103,13 +105,13 @@ const Hero = () => {
         <>
           <button
             onClick={prevSlide}
-            className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 text-white bg-black/30 hover:bg-black/50 px-3 sm:px-5 py-2 sm:py-3 z-20 rounded-full cursor-pointer text-lg sm:text-xl"
+            className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 text-light bg-black/30 hover:bg-black/50 px-3 sm:px-5 py-2 sm:py-3 z-20 rounded-full cursor-pointer text-lg sm:text-xl"
           >
             &#10094;
           </button>
           <button
             onClick={nextSlide}
-            className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 text-white bg-black/30 hover:bg-black/50 px-3 sm:px-5 py-2 sm:py-3 z-20 rounded-full cursor-pointer text-lg sm:text-xl"
+            className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 text-light bg-black/30 hover:bg-black/50 px-3 sm:px-5 py-2 sm:py-3 z-20 rounded-full cursor-pointer text-lg sm:text-xl"
           >
             &#10095;
           </button>

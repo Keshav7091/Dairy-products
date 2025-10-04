@@ -1,20 +1,20 @@
 import React from "react";
 import CustomButton from "../CustomButton";
-// import PageBanner from "../components/PageBanner";
+import Heading from "../Heading";
+import { FaCheck  } from "react-icons/fa";
 
 const HowDIffUS = () => {
   return (
-    <section className="container  py-20 px-6 md:px-16">
+    <section className="container py-20 px-6 md:px-16">
       
       {/* Hero / Title */}
-      <div className="text-center mb-12">
-        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-          How We’re Different
-        </h2>
-        <p className="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto">
-          Crafted in the UK. Rooted in Tradition. Driven by Quality.
-        </p>
-      </div>
+      <Heading 
+          title="How We’re Different"
+          subtitle="Crafted in the UK. Rooted in Tradition. Driven by Quality."
+          align="center"
+          underline={true}
+          className="mb-12"
+      />
 
       {/* Grid: Image + Key Points */}
       <div className="md:flex md:items-center md:gap-12">
@@ -35,15 +35,15 @@ const HowDIffUS = () => {
 
           <ul className="space-y-4 mb-6">
             <li className="flex items-start gap-3">
-              <span className="text-green-600 text-xl mt-1">✔</span>
+              <FaCheck  className="text-secondary  text-xl mt-1" />
               Milk delivered directly from farm to facility for unmatched freshness.
             </li>
             <li className="flex items-start gap-3">
-              <span className="text-green-600 text-xl mt-1">✔</span>
+              <FaCheck  className="text-secondary text-xl mt-1" />
               Traditional Indian recipes perfected with UK hygiene and safety standards.
             </li>
             <li className="flex items-start gap-3">
-              <span className="text-green-600 text-xl mt-1">✔</span>
+              <FaCheck  className="text-secondary  text-xl mt-1" />
               Supporting local farmers & ethical sourcing.
             </li>
           </ul>

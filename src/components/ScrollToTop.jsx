@@ -48,7 +48,7 @@ const ScrollToTop = () => {
           exit={animation.exit}
           transition={animation.transition}
           className="fixed bottom-6 right-6 z-30 flex items-center justify-center w-14 h-14 rounded-full shadow-2xl
-                     bg-green-gradient text-white text-lg overflow-visible cursor-pointer"
+                     bg-cow-gradient text-white text-lg overflow-visible cursor-pointer"
         >
           {/* Decorative shine + glow layers */}
           <span className="absolute inset-0 pointer-events-none rounded-full button-shine" />

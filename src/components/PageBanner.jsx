@@ -1,10 +1,8 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { AiFillHome } from "react-icons/ai";
 
 const PageBanner = ({ title }) => {
-  const location = useLocation();
-  const pathnames = location.pathname.split("/").filter((x) => x);
-
   return (
     <div className="relative w-full h-64 sm:h-80 md:h-96 lg:h-[28rem] overflow-hidden">
       {/* Background Image */}
@@ -16,43 +14,26 @@ const PageBanner = ({ title }) => {
       ></div>
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/20 z-10"></div>
+      <div className="absolute inset-0 bg-black/30 z-10"></div>
 
       {/* Content */}
       <div className="relative z-20 flex flex-col items-center justify-center h-full text-center px-4 sm:px-6 lg:px-12 xl:px-20">
+        {/* Title with background overlay */}
         <h1
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-2"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-light mb-2 px-4 py-2 rounded-md bg-black/20"
           style={{ fontFamily: "Georgia, serif" }}
         >
           {title}
         </h1>
 
-        <p className="text-sm sm:text-base md:text-lg text-white font-medium flex flex-wrap justify-center items-center mt-2">
-          <Link to="/" className="hover:text-green-400 transition duration-300">
-            Home
+        {/* Breadcrumb */}
+        <p className="text-sm sm:text-base md:text-lg font-medium flex items-center gap-1 mt-4">
+          <Link
+            to="/"
+            className="text-primary hover:text-[#fb8c00] transition duration-300 flex items-center gap-1"
+          >
+            <AiFillHome size={25} /> Home
           </Link>
-          {pathnames.map((value, index) => {
-            const to = `/${pathnames.slice(0, index + 1).join("/")}`;
-            const isLast = index === pathnames.length - 1;
-
-            return (
-              <span key={to} className="flex items-center">
-                <span className="mx-1 sm:mx-2 text-gray-300">/</span>
-                {isLast ? (
-                  <span className="text-green-400 capitalize">
-                    {value.replace("-", " ")}
-                  </span>
-                ) : (
-                  <Link
-                    to={to}
-                    className="hover:text-green-500 transition duration-300 capitalize"
-                  >
-                    {value.replace("-", " ")}
-                  </Link>
-                )}
-              </span>
-            );
-          })}
         </p>
       </div>
     </div>

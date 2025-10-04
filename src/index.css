@@ -19,25 +19,67 @@ body {
 }
 
 @layer utilities {
-  .bg-green-gradient {
-    background-image: linear-gradient(
-      to right,
-      #64a019,
-      #6ca821,
-      #73b128,
-      #7bb92f,
-      #83c236
+  /* ------------------------
+     Brand Colors (Text)
+  ------------------------ */
+  .text-primary { color: #c62828; }     /* Logo Red */
+  .text-secondary { color: #fb8c00; }   /* Orange Tone */
+  .text-accent { color: #6d4c41; }      /* Brown Shade */
+  .text-highlight { color: #f48fb1; }   /* Soft Pink */
+  .text-light { color: #ffffff; }       /* White */
+
+  /* ------------------------
+     Brand Colors (Background)
+  ------------------------ */
+  .bg-primary { background-color: #c62828; }
+  .bg-secondary { background-color: #fb8c00; }
+  .bg-accent { background-color: #6d4c41; }
+  .bg-highlight { background-color: #f48fb1; }
+  .bg-light { background-color: #ffffff; }
+
+  /* ------------------------
+     Gradient Background (Logo Theme)
+  ------------------------ */
+  .bg-cow-gradient {
+    background: linear-gradient(
+      135deg,
+      #c62828,
+      #fb8c00,
+      #f48fb1,
+      #6d4c41
     );
+    color: #ffffff;
+    background-size: 200% 200%;
+    animation: gradientFlow 6s ease infinite;
   }
 
-  .text-green-gradient {
+  /* ------------------------
+     Gradient Text (Optional Glow)
+  ------------------------ */
+  .glow-text {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.6),
+                 0 0 20px rgba(251, 140, 0, 0.5);
+  }
+
+  /* ------------------------
+     Gradient Animation Keyframes
+  ------------------------ */
+  @keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* ------------------------
+     Extra Gradient Text Class
+  ------------------------ */
+  .text-cow-gradient {
     background: linear-gradient(
-      to right,
-      #64a019,
-      #6ca821,
-      #73b128,
-      #7bb92f,
-      #83c236
+      135deg,
+      #c62828,
+      #fb8c00,
+      #f48fb1,
+      #6d4c41
     );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -54,93 +96,98 @@ body {
   background-repeat: no-repeat;
 }
 
-
 /* ------------------------
-   Custom Components
+   🌈 Custom Components (Cows Choice Theme)
 ---------------------------*/
 @layer components {
 
-  /* Buttons */
+  /* ===== Buttons ===== */
   .btn {
     @apply inline-block px-6 py-3 rounded-lg font-medium transition duration-300;
   }
 
   .btn-primary {
     @apply text-white shadow-md px-6 py-3 rounded-md font-semibold transition duration-300;
-    background-image: linear-gradient(to right,
-        #64a019,
-        #6ca821,
-        #73b128,
-        #7bb92f,
-        #83c236);
+    background-image: linear-gradient(
+      to right,
+      #c62828,
+      #fb8c00,
+      #f48fb1
+    ); /* Red → Orange → Pink */
   }
 
   .btn-primary:hover {
-    background-image: linear-gradient(to right,
-        #558c16,
-        #5c941b,
-        #629c21,
-        #69a426,
-        #70ad2c);
+    background-image: linear-gradient(
+      to right,
+      #a31e1e,
+      #e07a00,
+      #e276a4
+    ); /* Darker shades on hover */
   }
 
-
-  /* Navbar */
+  /* ===== Navbar Links ===== */
   .nav-link {
-    @apply text-gray-700 hover:text-green-700 transition duration-200;
+    @apply text-gray-700 transition duration-200;
+    color: #6d4c41; /* Brown tone from logo */
+  }
+
+  .nav-link:hover {
+    color: #c62828; /* Logo Red on hover */
   }
 
   .nav-active {
-    @apply text-green-700 font-semibold;
+    @apply font-semibold;
+    color: #fb8c00; /* Orange tone when active */
+    border-bottom: 2px solid #fb8c00;
+  }
+}
+
+
+@layer utilities {
+  /* ------------------------
+     Scroll to top button styles (Cows Choice colors)
+  ---------------------------*/
+
+  /* subtle diagonal animated shine on hover */
+  .button-shine {
+    background: linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0.06) 0%,
+      rgba(255, 255, 255, 0.02) 40%,
+      rgba(255, 255, 255, 0.2) 60%,
+      rgba(255, 255, 255, 0.02) 100%
+    );
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    transform: translateX(-60%) rotate(-12deg) scale(1);
+    opacity: 0;
   }
 
-  
-}
+  /* glow ring for landing emphasis */
+  .button-glow {
+    /* Changed green glow to theme's primary (red) color */
+    box-shadow: 0 8px 30px rgba(198, 40, 40, 0.18); /* red glow */
+    transition: box-shadow 0.35s ease;
+    opacity: 1;
+  }
 
-/* ------------------------
-   Scroll to top
----------------------------*/
+  /* On hover/focus: show shine and slightly increase glow */
+  .fixed:hover .button-shine,
+  .fixed:focus .button-shine {
+    transform: translateX(60%) rotate(-12deg) scale(1.05);
+    opacity: 1;
+  }
+  .fixed:hover .button-glow,
+  .fixed:focus .button-glow {
+    box-shadow: 0 14px 36px rgba(198, 40, 40, 0.26); /* stronger red glow on hover */
+  }
 
-/* button-shine: subtle diagonal animated shine on hover */
-.button-shine {
-  background: linear-gradient(
-    120deg,
-    rgba(255, 255, 255, 0.06) 0%,
-    rgba(255, 255, 255, 0.02) 40%,
-    rgba(255, 255, 255, 0.2) 60%,
-    rgba(255, 255, 255, 0.02) 100%
-  );
-  transition: transform 0.6s ease, opacity 0.6s ease;
-  transform: translateX(-60%) rotate(-12deg) scale(1);
-  opacity: 0;
-}
-
-/* glow ring for landing emphasis */
-.button-glow {
-  box-shadow: 0 8px 30px rgba(16, 185, 129, 0.18);
-  transition: box-shadow 0.35s ease;
-  opacity: 1;
-}
-
-/* On hover/focus: show shine and slightly increase glow */
-.fixed:hover .button-shine,
-.fixed:focus .button-shine {
-  transform: translateX(60%) rotate(-12deg) scale(1.05);
-  opacity: 1;
-}
-.fixed:hover .button-glow,
-.fixed:focus .button-glow {
-  box-shadow: 0 14px 36px rgba(16, 185, 129, 0.26);
-}
-
-
-
-/* Optional: landing bounce */
-@keyframes small-bounce {
-  0% { transform: translateY(-6px); }
-  60% { transform: translateY(2px); }
-  100% { transform: translateY(0); }
-}
-.motion-bounce {
-  animation: small-bounce 420ms ease;
+  /* Optional: landing bounce */
+  @keyframes small-bounce {
+    0% { transform: translateY(-6px); }
+    60% { transform: translateY(2px); }
+    100% { transform: translateY(0); }
+  }
+  .motion-bounce {
+    animation: small-bounce 420ms ease;
+  }
 }

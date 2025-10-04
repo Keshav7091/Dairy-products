@@ -3,6 +3,7 @@ import { FaHeart } from "react-icons/fa";
 import { GiCookingPot } from "react-icons/gi";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import CustomButton from "../CustomButton";
+import Heading from "../Heading";
 
 const RecipeInspiration = () => {
   const recipes = [
@@ -14,15 +15,15 @@ const RecipeInspiration = () => {
   return (
     <section className="py-24 bg-image">
       <div className="container mx-auto px-6 lg:px-12 xl:px-20">
-
         {/* --- Quick Recipe Inspiration --- */}
         <div className="mb-24 text-center">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6">
-            Quick Recipe Inspiration
-          </h2>
-          <p className="text-gray-600 text-lg md:text-xl mb-10">
-            Delicious ideas to make your meals exciting
-          </p>
+          <Heading
+            title="Quick Recipe Inspiration"
+            subtitle="Delicious ideas to make your meals exciting"
+            align="center"
+            underline={true}
+            className="mb-12"
+          />
 
           <div className="flex justify-center flex-wrap gap-6">
             {recipes.map((recipe, idx) => (
@@ -45,24 +46,24 @@ const RecipeInspiration = () => {
           </div>
 
           <div className="mt-10">
-            
             <CustomButton text="View All Recipes" link="/recipes" />
           </div>
         </div>
 
         {/* --- Health, Tradition & Sustainability --- */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6">
-            Health, Tradition & Sustainability
-          </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto mb-12">
-            Our food is more than just flavour. It’s rooted in:
-          </p>
+          <Heading
+            title="Health, Tradition & Sustainability"
+            subtitle="Our food is more than just flavour. It’s rooted in:"
+            align="center"
+            underline={true}
+            className="mb-12"
+          />
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 justify-items-center">
             {/* Nutritional Balance */}
             <div className="bg-white rounded-2xl shadow-md p-8 flex flex-col items-center text-center hover:shadow-lg transition-shadow duration-300">
-              <FaHeart className="text-green-500 text-5xl mb-4" />
+              <FaHeart className="text-secondary text-5xl mb-4" />
               <h3 className="text-2xl font-bold mb-2">Nutritional Balance</h3>
               <p className="text-gray-600">
                 Protein, calcium & probiotics included for healthy meals.
@@ -71,27 +72,16 @@ const RecipeInspiration = () => {
 
             {/* Generational Knowledge */}
             <div className="bg-white rounded-2xl shadow-md p-8 flex flex-col items-center text-center hover:shadow-lg transition-shadow duration-300">
-              <GiCookingPot className="text-yellow-500 text-5xl mb-4" />
-              <h3 className="text-2xl font-bold mb-2">Generational Knowledge</h3>
+              <GiCookingPot className="text-secondary text-5xl mb-4" />
+              <h3 className="text-2xl font-bold mb-2">
+                Generational Knowledge
+              </h3>
               <p className="text-gray-600">
                 Authentic recipes inspired by Indian family kitchens.
               </p>
             </div>
-
-            {/* Low-Impact Supply Chain */}
-            <div className="bg-white rounded-2xl shadow-md p-8 flex flex-col items-center text-center hover:shadow-lg transition-shadow duration-300">
-              <AiOutlineArrowRight className="text-blue-500 text-5xl mb-4" />
-              <h3 className="text-2xl font-bold mb-2">Low-Impact Supply Chain</h3>
-              <p className="text-gray-600">
-                Sustainable farm-to-fork practices for minimal environmental impact.
-              </p>
-              <button className="mt-4 text-green-600 font-semibold hover:underline">
-                Learn More
-              </button>
-            </div>
           </div>
         </div>
-
       </div>
     </section>
   );
