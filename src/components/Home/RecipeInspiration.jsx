@@ -60,7 +60,7 @@ const RecipeInspiration = () => {
             className="mb-12"
           />
 
-          <div className="grid md:grid-cols-2 justify-items-center">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-1 justify-items-center">
             {/* Nutritional Balance */}
             <div className="bg-white rounded-2xl shadow-md p-8 flex flex-col items-center text-center hover:shadow-lg transition-shadow duration-300">
               <FaHeart className="text-secondary text-5xl mb-4" />

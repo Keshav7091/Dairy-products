@@ -2,12 +2,14 @@ import React from "react";
 import PageBanner from "../components/PageBanner";
 import { FiCheck } from "react-icons/fi";
 import CustomButton from "../components/CustomButton";
+import Heading from "../components/Heading";
 
 const products = [
   {
-    name: "Paneer – Malai (Creamy Style)",
+    name: "Paneer",
+    extraLine: "Indian Cottage Cheese",
+    subtitle: "Malai (Creamy Style)",
     image: "/products/08.jfif",
-    sizes: ["200g", "500g", "1000g vacuum-sealed blocks"],
     description:
       "Our Malai Paneer is soft, rich, and indulgent—perfect for special curries like shahi paneer, malai kofta, or paneer butter masala. Made with full-fat milk and minimal processing, it holds shape during cooking but melts in the mouth when eaten.",
     features: [
@@ -17,9 +19,11 @@ const products = [
     ],
   },
   {
-    name: "Paneer – Low Fat (High Protein)",
+    name: "Paneer",
+    extraLine: "Indian Cottage Cheese",
+    subtitle: "Low Fat (High Protein)",
     image: "/products/06.jpg",
-    sizes: ["200g", "500g", "1000g vacuum-sealed blocks"],
+    // sizes: ["200g", "500g", "1000g vacuum-sealed blocks"],
     description:
       "This is the versatile, everyday paneer used in households and professional kitchens alike. Firm enough for grilling or frying, yet tender enough for bhurji, paratha stuffing, or salads. Fits the bill for calorie conscious consumers.",
     features: [
@@ -29,9 +33,39 @@ const products = [
     ],
   },
   {
-    name: "Khoya (Mawa)",
+    name: "Desi Ghee",
+    // extraLine: "Indian Cottage Cheese",
+    subtitle: "(Clarified Butter)",
+    image: "/products/06.jpg",
+    // sizes: ["200g", "500g", "1000g vacuum-sealed blocks"],
+    description:
+      "This is the versatile, everyday paneer used in households and professional kitchens alike. Firm enough for grilling or frying, yet tender enough for bhurji, paratha stuffing, or salads. Fits the bill for calorie conscious consumers.",
+    features: [
+      "Low-fat, cow’s milk",
+      "Clean taste with balanced firmness",
+      "Cooks evenly and absorbs spices beautifully",
+    ],
+  },
+  {
+    name: "Oil Free Pickles",
+    // extraLine: "Indian Cottage Cheese",
+    subtitle: "(Fermented Goodness with Indian Spices )",
+    image: "/products/06.jpg",
+    // sizes: ["200g", "500g", "1000g vacuum-sealed blocks"],
+    description:
+      "This is the versatile, everyday paneer used in households and professional kitchens alike. Firm enough for grilling or frying, yet tender enough for bhurji, paratha stuffing, or salads. Fits the bill for calorie conscious consumers.",
+    features: [
+      "Low-fat, cow’s milk",
+      "Clean taste with balanced firmness",
+      "Cooks evenly and absorbs spices beautifully",
+    ],
+  },
+  {
+    name: "Khoya",
+    extraLine: "Granular & Smooth",
+    subtitle: "(Mawa)",
     image: "/products/03.png",
-    sizes: ["200g", "500g blocks (granular or smooth)"],
+    // sizes: ["200g", "500g blocks (granular or smooth)"],
     description:
       "Khoya is slow-cooked from fresh milk—never reconstituted—giving it a rich, caramelised texture perfect for gulab jamun, barfi, pedas, and halwa.",
     features: [
@@ -42,8 +76,9 @@ const products = [
   },
   {
     name: "Whey Protein",
+    // extraLine: "Indian Cottage Cheese",
     image: "/products/05.jpg",
-    sizes: ["500ml bottle", "1L pouch"],
+    // sizes: ["500ml bottle", "1L pouch"],
     description:
       "Extracted naturally during the paneer-making process, our whey protein is a clean, vegetarian source of nutrition. Rich in amino acids, easy to digest, and completely free from additives.",
     features: [
@@ -53,9 +88,11 @@ const products = [
     ],
   },
   {
-    name: "White Butter (Unsalted, Cow’s Milk)",
+    name: "White Butter",
+    // extraLine: "Indian Cottage Cheese",
+    subtitle: "(Unsalted, Cow’s Milk)",
     image: "/products/01.jpg",
-    sizes: ["200g", "500g tubs"],
+    // sizes: ["200g", "500g tubs"],
     description:
       "Hand-churned from fresh cream, this unsalted white butter is inspired by the traditional Indian ‘makhan’.",
     features: [
@@ -72,28 +109,75 @@ const Products = () => {
       <PageBanner title="Products" />
 
       <div className="container pt-10">
-        {/* Products Header */}
-        <div className="max-w-6xl mx-auto text-center mb-12">
-          <h2 className="text-xl font-bold text-gray-800 mb-2 font-sans text-center">
-            Our Product
-          </h2>
-          <h3
-            className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-4 text-center"
-            style={{ fontFamily: "Georgia, serif" }}
-          >
-            We Provided the Best Product
-          </h3>
-          <p className="text-gray-700 text-lg md:text-xl">
-            Authentic Indian dairy made fresh in the UK.
-          </p>
-        </div>
+        <Heading
+          title={"Our Products"}
+          subtitle={"We Provided the Best Products"}
+          align="center"
+          underline
+          className="mb-12"
+        />
 
-        {/* Products Grid */}
+        {/* Hero-style First Product */}
+        {products[0] && (
+          <div className="flex flex-col lg:flex-row bg-[#fb8c00]/10 p-8 rounded-3xl shadow-md mb-16 gap-8">
+            {/* Image Left */}
+            <div className="lg:w-1/2 h-64 lg:h-auto overflow-hidden rounded-2xl">
+              <img
+                src={products[0].image}
+                alt={products[0].name}
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            {/* Content Right */}
+            <div className="lg:w-3/4 flex flex-col justify-between">
+              <div>
+                <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-gray-900">
+                  {products[0].name}
+                  {products[0].extraLine && (
+                    <>
+                      <br />
+                      <span className="text-[#6d4c41] font-xl">
+                        {products[0].extraLine}
+                      </span>
+                    </>
+                  )}
+                  {products[0].subtitle && (
+                    <>
+                      <br />
+                      <span className="text-gray-600 text-lg">
+                        {products[0].subtitle}
+                      </span>
+                    </>
+                  )}
+                </h2>
+
+                <p className="text-gray-700 mb-4">{products[0].description}</p>
+
+                <ul className="space-y-2 mb-4">
+                  {products[0].features.map((feature, idx) => (
+                    <li
+                      key={idx}
+                      className="flex items-start gap-2 text-gray-700"
+                    >
+                      <FiCheck className="text-secondary mt-1" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <CustomButton text="Order Now" link="/contact" />
+            </div>
+          </div>
+        )}
+
+        {/* Remaining Products Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 mb-16">
-          {products.map((product, i) => (
+          {products.slice(1).map((product, i) => (
             <div
               key={i}
-              className="bg-green-50 p-6 rounded-3xl shadow-md hover:shadow-2xl hover:scale-105 transition transform duration-300 border border-transparent hover:border-green-300 group"
+              className="bg-green-50 p-6 rounded-3xl shadow-md hover:shadow-2xl hover:scale-105 transition transform duration-300 border border-transparent hover:border-[#fb8c00] group"
             >
               {/* Product Image */}
               <div className="w-full h-48 mb-4 overflow-hidden rounded-2xl">
@@ -105,23 +189,37 @@ const Products = () => {
               </div>
 
               {/* Product Name */}
-              <h2 className="text-2xl font-bold text-gray-900 mb-2 transition-colors duration-300 group-hover:text-green-700">
+              <h2 className="text-2xl font-bold mb-2 transition-colors duration-300 group-hover:text-[#fb8c00]">
                 {product.name}
+                {product.extraLine && (
+                  <>
+                    <br />
+                    <span className="text-[#6d4c41] font-xl">
+                      {product.extraLine}
+                    </span>
+                  </>
+                )}
+                {product.subtitle && (
+                  <>
+                    <br />
+                    <span className="text-gray-600 group-hover:text-[#fb8c00]/70 text-lg">
+                      {product.subtitle}
+                    </span>
+                  </>
+                )}
               </h2>
 
               {/* Description */}
               <p className="text-gray-700 mb-4">{product.description}</p>
 
-              {/* Pack Sizes */}
-              <p className="font-medium text-gray-900 mb-3">
-                Pack Size: {product.sizes.join(" , ")}
-              </p>
-
-              {/* Features with icons */}
+              {/* Features */}
               <ul className="space-y-2 mb-4">
                 {product.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-start gap-2 text-gray-700">
-                    <FiCheck className="text-green-600 mt-1" />
+                  <li
+                    key={idx}
+                    className="flex items-start gap-2 text-gray-700"
+                  >
+                    <FiCheck className="text-secondary mt-1" />
                     <span>{feature}</span>
                   </li>
                 ))}

@@ -15,8 +15,11 @@ const Footer = () => {
       <div className="container mx-auto px-6 lg:px-12 xl:px-20 py-24 grid lg:grid-cols-3 gap-12">
         {/* Brand & About */}
         <div className="space-y-4">
+          
           <h2 className="text-3xl font-extrabold tracking-wider text-cow-gradient">
-            Cows Choice
+            <Link to="/">
+              Cows Choice
+            </Link>
           </h2>
           <p className="text-gray-300 text-sm leading-relaxed">
             Crafting premium dairy products that blend tradition and modernity.
@@ -25,19 +28,19 @@ const Footer = () => {
           <div className="flex gap-4 mt-4">
             <a
               href="#"
-              className="hover:text-green-400 transition-transform transform hover:scale-125"
+              className="hover:text-[#fb8c00] transition-transform transform hover:scale-125"
             >
               <FaInstagram size={24} />
             </a>
             <a
               href="#"
-              className="hover:text-green-400 transition-transform transform hover:scale-125"
+              className="hover:text-[#fb8c00] transition-transform transform hover:scale-125"
             >
               <FaLinkedin size={24} />
             </a>
             <a
               href="#"
-              className="hover:text-green-400 transition-transform transform hover:scale-125"
+              className="hover:text-[#fb8c00] transition-transform transform hover:scale-125"
             >
               <FaFacebook size={24} />
             </a>
@@ -52,7 +55,7 @@ const Footer = () => {
               <li key={index}>
                 <Link
                   to={link.path}
-                  className="hover:text-green-400 transition-colors"
+                  className="hover:text-[#fb8c00] transition-colors"
                 >
                   {link.name}
                 </Link>

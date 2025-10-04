@@ -43,7 +43,7 @@ const OurGoal = () => {
           {/* Card 3 (Clickable) */}
           <Link 
             to="/about"
-            className="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center text-center hover:shadow-xl transition-shadow duration-300 hover:bg-green-50"
+            className="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center text-center hover:shadow-xl transition-shadow duration-300 hover:bg-[#fb8c00]/10"
           >
             <AiOutlineArrowRight className="text-secondary text-5xl mb-4" />
             <h3 className="text-2xl font-bold text-gray-800 mb-2">Discover Our Story</h3>

@@ -104,20 +104,20 @@ const Recipes = () => {
       <PageBanner title="Recipes" />
 
       {/* Intro Section */}
-      <section className="py-16 px-6 md:px-16 bg-gradient-to-r from-green-50 to-green-100 text-center">
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+      <section className="py-16 px-6 md:px-16 bg-gradient-to-r from-light/80 to-light/90 text-center">
+        <h2 className="text-2xl md:text-3xl font-bold text-primary mb-4">
           Traditional favourites. Modern kitchens. Ingredients you trust.
         </h2>
         <p className="max-w-3xl mx-auto text-gray-700 text-lg leading-relaxed">
           At the heart of Indian cooking lies a deep connection to home,
-          heritage, and nourishment. With our fresh, UK-made dairy products, you
+          heritage, and nourishment. With our fresh products, you
           can now recreate the authentic taste of Indian meals — without
           compromise, and without relying on frozen imports or powdered
           substitutes.
           <br />
           <br />
           Whether you’re preparing a weekday dinner, hosting friends for a
-          festival, or simply missing a dish your grandmother used to make —
+          festival, or simply missing a dish your grandmother used to make — 
           we’re here to help bring that moment back to your table.
         </p>
       </section>
@@ -127,11 +127,11 @@ const Recipes = () => {
         <section
           key={i}
           className={`py-20 px-6 md:px-16 ${
-            i % 2 === 1 ? "bg-gray-50" : "bg-white"
+            i % 2 === 1 ? "bg-light/50" : "bg-white"
           }`}
         >
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-3">
               {cat.title}
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">{cat.description}</p>
@@ -141,15 +141,15 @@ const Recipes = () => {
             {cat.items.map((item, j) => (
               <div
                 key={j}
-                className="group p-6 rounded-2xl bg-white/70 border shadow-md backdrop-blur-sm hover:shadow-2xl hover:scale-[1.02] transition transform duration-300"
+                className="group p-6 rounded-2xl bg-white/70 border border-secondary/20 shadow-md backdrop-blur-sm hover:shadow-2xl hover:scale-[1.02] transition transform duration-300"
               >
-                <h3 className="text-lg font-semibold text-gray-800 mb-2 group-hover:text-green-600 transition-colors duration-300">
+                <h3 className="text-lg font-semibold text-gray-800 mb-2 group-hover:text-[#c62828] transition-colors duration-300">
                   {j + 1}. {item.name}
                 </h3>
                 <p className="text-gray-600 mb-3 text-sm leading-relaxed">
                   {item.detail}
                 </p>
-                <span className="inline-block text-xs font-medium text-green-700 bg-green-100 px-3 py-1 rounded-full">
+                <span className="inline-block text-xs font-medium text-secondary bg-secondary/20 px-3 py-1 rounded-full">
                   Recommended: {item.recommended}
                 </span>
               </div>
@@ -157,36 +157,6 @@ const Recipes = () => {
           </div>
         </section>
       ))}
-
-      {/* Shrikhand Section */}
-      <section className="py-20 px-6 md:px-16 bg-gradient-to-r from-green-50 to-green-100 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-          Shrikhand Ideas – Creamy, Cool & Naturally Sweet
-        </h2>
-        <p className="text-gray-700 max-w-2xl mx-auto text-lg leading-relaxed">
-          Experiment with saffron, mango, or cardamom flavours — our shrikhand
-          makes a refreshing dessert for every season.
-        </p>
-      </section>
-
-      {/* Closing */}
-      <section className="text-center py-24 px-6 md:px-16 bg-gray-900 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-tr from-green-600/20 to-transparent"></div>
-        <h2 className="text-3xl md:text-4xl font-extrabold mb-6">
-          More Recipes Coming Soon 🚀
-        </h2>
-        <p className="max-w-2xl mx-auto text-gray-300 mb-8 leading-relaxed">
-          Want a favourite recipe featured? Or have one to share from your
-          family kitchen? Email us or tag us on Instagram — we’d love to share
-          your story with our community.
-        </p>
-        <Link
-          to="/contact" // 'to' attribute set to the contact page URL
-          className="inline-block bg-green-500 hover:bg-green-600 px-10 py-4 rounded-full font-semibold text-white shadow-lg transition transform hover:-translate-y-1 cursor-pointer z-10"
-        >
-          ✨ Share Your Recipe
-        </Link>
-      </section>
     </div>
   );
 };

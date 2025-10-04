@@ -71,26 +71,22 @@ const Contact = () => {
       <Toaster position="top-right" reverseOrder={false} />
 
       {/* Intro */}
-      {/* Intro */}
-      <section className="py-20 bg-gradient-to-b from-white via-gray-50 to-white relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-b from-light via-gray-50 to-light relative overflow-hidden">
         <div className="container mx-auto px-6 text-center max-w-5xl relative z-10">
-          {/* Heading */}
-          <h2 className="text-4xl md:text-6xl font-extrabold mb-6 leading-snug">
-            <span className="bg-gradient-to-r from-green-500 to-teal-500 text-transparent bg-clip-text">
-              Let’s bring real Indian dairy
+          <h2 className="text-4xl md:text-6xl font-extrabold mb-6 leading-snug capitalize">
+            <span className="text-cow-gradient">
+              Let’s Bring Real Indian dairy
             </span>
             <br />
             to more tables — together.
           </h2>
 
-          {/* Subheading */}
           <p className="text-gray-700 mb-10 leading-relaxed text-lg md:text-xl">
             Whether you’re a retailer, restaurant, distributor, or an
-            independent business looking for high-quality, UK-made paneer and
+            independent business looking for high-quality, milk and
             milk-based products — we’d love to hear from you.
           </p>
 
-          {/* Partner Categories */}
           <div className="grid md:grid-cols-2 gap-6 mb-12">
             {[
               "Ethnic and mainstream grocery retailers",
@@ -100,43 +96,39 @@ const Contact = () => {
             ].map((item, i) => (
               <div
                 key={i}
-                className="bg-white rounded-2xl p-6 border border-gray-200 hover:border-green-400 shadow-md hover:shadow-xl transition-all flex items-center justify-center text-center"
+                className="bg-light rounded-2xl p-6 border border-secondary/30 hover:border-secondary shadow-md hover:shadow-xl transition-all flex items-center justify-center text-center"
               >
-                <p className="text-gray-800 font-semibold text-lg md:text-xl">
+                <p className="text-primary font-semibold text-lg md:text-xl">
                   {item}
                 </p>
               </div>
             ))}
           </div>
 
-          {/* Extra Info */}
           <p className="text-gray-600 max-w-3xl mx-auto mb-8 text-lg md:text-xl">
             Our products are trusted for their{" "}
-            <span className="text-green-600 font-semibold">
+            <span className="text-secondary font-semibold">
               quality, freshness, and consistency
             </span>
             . We’re always open to discussing custom orders, bulk pricing, and
             B2B logistics.
           </p>
 
-          {/* CTA */}
           <CustomButton text="Partner with Us" link="/contact" />
         </div>
 
-        {/* Decorative Background */}
         <div className="absolute inset-0">
-          <div className="absolute -top-20 -left-20 w-72 h-72 bg-green-200 opacity-30 rounded-full blur-3xl"></div>
-          <div className="absolute -bottom-20 -right-20 w-72 h-72 bg-teal-200 opacity-30 rounded-full blur-3xl"></div>
+          <div className="absolute -top-20 -left-20 w-72 h-72 bg-primary/20 opacity-30 rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-20 -right-20 w-72 h-72 bg-secondary/20 opacity-30 rounded-full blur-3xl"></div>
         </div>
       </section>
 
       {/* Form + Info */}
-      {/* Form + Info */}
       <div className="bg-image">
-        <section className="py-20 container mx-auto px-6 max-w-6xl grid md:grid-cols-2 gap-12">
-          {/* Form */}
-          <div className="backdrop-blur-lg border border-green-400/30 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
-            <h3 className="text-3xl font-bold mb-6 text-green-400">
+        <section className="py-20 container mx-auto px-6 max-w-6xl grid md:grid-cols-2 gap-12 items-start">
+          {/* Left: Form */}
+          <div className="backdrop-blur-lg border border-secondary/30 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
+            <h3 className="text-3xl font-bold mb-6 text-secondary">
               Trade Enquiry Form
             </h3>
             <form className="space-y-5" onSubmit={handleSubmit}>
@@ -147,7 +139,7 @@ const Contact = () => {
                 required
                 value={formData.fullName}
                 onChange={handleChange}
-                className="w-full px-4 py-4 rounded-md focus:outline-none border border-gray-700 text-black text-lg"
+                className="w-full px-4 py-4 rounded-md focus:outline-none border border-secondary text-black text-lg"
               />
               <input
                 type="text"
@@ -156,7 +148,7 @@ const Contact = () => {
                 required
                 value={formData.company}
                 onChange={handleChange}
-                className="w-full px-4 py-4 rounded-md border border-gray-700 text-black text-lg"
+                className="w-full px-4 py-4 rounded-md border border-secondary text-black text-lg"
               />
               <input
                 type="email"
@@ -165,7 +157,7 @@ const Contact = () => {
                 required
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full px-4 py-4 rounded-md border border-gray-700 text-black text-lg"
+                className="w-full px-4 py-4 rounded-md border border-secondary text-black text-lg"
               />
               <input
                 type="text"
@@ -174,7 +166,7 @@ const Contact = () => {
                 required
                 value={formData.phone}
                 onChange={handleChange}
-                className="w-full px-4 py-4 rounded-md border border-gray-700 text-black text-lg"
+                className="w-full px-4 py-4 rounded-md border border-secondary text-black text-lg"
               />
               <input
                 type="text"
@@ -182,14 +174,14 @@ const Contact = () => {
                 placeholder="City / Region"
                 value={formData.city}
                 onChange={handleChange}
-                className="w-full px-4 py-4 rounded-md border border-gray-700 text-black text-lg"
+                className="w-full px-4 py-4 rounded-md border border-secondary text-black text-lg"
               />
 
               <select
                 name="businessType"
                 value={formData.businessType}
                 onChange={handleChange}
-                className="w-full px-4 py-4 rounded-md border border-gray-700 text-black text-lg"
+                className="w-full px-4 py-4 rounded-md border border-secondary text-black text-lg"
               >
                 <option value="">Select Business Type</option>
                 <option>Retailer</option>
@@ -198,24 +190,13 @@ const Contact = () => {
                 <option>Other</option>
               </select>
 
-              {/* Products of Interest */}
               <div>
-                <p className="mb-2 font-semibold text-green-400 text-lg">
+                <p className="mb-2 font-semibold text-secondary text-lg">
                   Products of Interest:
                 </p>
                 <div className="grid grid-cols-2 gap-3 text-base md:text-lg">
-                  {[
-                    "Paneer",
-                    "Khoya",
-                    "White Butter",
-                    "Shrikhand",
-                    "Whey",
-                    "Other",
-                  ].map((product) => (
-                    <label
-                      key={product}
-                      className="flex items-center gap-2 text-gray-700"
-                    >
+                  {["Paneer","Khoya","White Butter","Shrikhand","Whey","Other"].map((product) => (
+                    <label key={product} className="flex items-center gap-2">
                       <input
                         type="checkbox"
                         value={product}
@@ -234,7 +215,7 @@ const Contact = () => {
                 placeholder="Expected Monthly Volume (optional)"
                 value={formData.volume}
                 onChange={handleChange}
-                className="w-full px-4 py-4 rounded-md border border-gray-700 text-lg"
+                className="w-full px-4 py-4 rounded-md border border-secondary text-lg"
               />
 
               <textarea
@@ -243,7 +224,7 @@ const Contact = () => {
                 placeholder="Message / Additional Requirements"
                 value={formData.message}
                 onChange={handleChange}
-                className="w-full px-4 py-4 rounded-md border border-gray-700 text-lg resize-none"
+                className="w-full px-4 py-4 rounded-md border border-secondary text-lg resize-none"
               ></textarea>
 
               <button
@@ -256,9 +237,9 @@ const Contact = () => {
             </form>
           </div>
 
-          {/* Contact Info */}
-          <div className="backdrop-blur-lg border border-green-400/30 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all text-lg">
-            <h3 className="text-3xl font-bold mb-6 text-green-400">
+          {/* Right: Contact Info */}
+          <div className="backdrop-blur-lg border border-secondary/30 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all max-h-full">
+            <h3 className="text-3xl font-bold mb-6 text-secondary">
               Prefer Email?
             </h3>
             <p className="mb-6">
@@ -267,44 +248,33 @@ const Contact = () => {
             </p>
             <div className="space-y-6 text-lg">
               <div className="flex items-start gap-4">
-                <MdOutlineMail className="text-green-400 text-2xl" />
+                <MdOutlineMail className="text-secondary text-2xl" />
                 <div>
-                  <h4 className="font-semibold">Email</h4>
+                  <h4 className="font-semibold text-primary">Email</h4>
                   <a
                     href="mailto:info@dairycompany.com"
-                    className="hover:text-green-400"
+                    className="hover:text-[#fb8c00]"
                   >
-                    info@dairycompany.com
+                    cowschoice@cowschoice.com
                   </a>
                 </div>
               </div>
               <div className="flex items-start gap-4">
-                <MdOutlinePhone className="text-green-400 text-2xl" />
+                <MdOutlinePhone className="text-secondary text-2xl" />
                 <div>
-                  <h4 className="font-semibold">Phone</h4>
-                  <a href="tel:+44xxxxxx" className="hover:text-green-400">
+                  <h4 className="font-semibold text-primary">Phone</h4>
+                  <a href="tel:+44xxxxxx" className="hover:text-[#fb8c00]">
                     +44 xxxx xxxxxx
                   </a>
                 </div>
               </div>
               <div className="flex items-start gap-4">
-                <MdOutlineLocationOn className="text-green-400 text-2xl" />
+                <MdOutlineLocationOn className="text-secondary text-2xl" />
                 <div>
-                  <h4 className="font-semibold">Registered Office</h4>
+                  <h4 className="font-semibold text-primary">Registered Office</h4>
                   <p>London, United Kingdom</p>
                 </div>
               </div>
-            </div>
-
-            <div className="mt-8 border-t border-gray-700 pt-6 text-lg">
-              <h4 className="font-semibold mb-2 text-green-400">
-                Customer Relations & Sales
-              </h4>
-              <p>
-                If you're interested in visiting our facility, becoming a
-                stockist, or discussing exclusive partnerships, we’re ready when
-                you are.
-              </p>
             </div>
           </div>
         </section>

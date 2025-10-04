@@ -13,7 +13,7 @@ const AboutUS = () => {
           
           <Heading
             title="About Us"
-            align="left"
+            align="center"
             underline={true} // ✅ underline enabled
           /> 
 
