@@ -42,7 +42,7 @@ const Contact = () => {
     toast.loading("Submitting your enquiry...");
     try {
       await axios.post(
-        "https://peswani-pixels-mailer.onrender.com/send-mail",
+        "http://localhost:5000/api/form/send",
         formData
       );
       toast.dismiss();
