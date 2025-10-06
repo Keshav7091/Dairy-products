@@ -3,7 +3,7 @@ import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
 const SocialFloating = () => {
   return (
-    <div className="hidden md:flex fixed top-1/3 left-0 flex-col space-y-4 z-50">
+    <div className="hidden md:flex fixed top-1/4 left-0 flex-col space-y-4 z-50">
       <a
         href="https://www.facebook.com/yourhandle"
         target="_blank"

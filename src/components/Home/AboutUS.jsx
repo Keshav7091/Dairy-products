@@ -69,11 +69,11 @@ const AboutUS = () => {
         </div>
 
         {/* ➡️ Right Block: Image + Feature Icons */}
-        <div className="md:w-1/2 mt-10 md:mt-0 order-1 md:order-2 flex flex-col items-center">
+        <div className="md:w-1/2 mt-10 md:mt-5 order-1 md:order-2 flex flex-col items-center">
           <img
-            src="/home/06.jfif"
+            src="/home/06.jpg"
             alt="Cows Choice Products"
-            className="w-full rounded-lg shadow-primary mb-8 object-cover"
+            className="w-full h-[80vh] rounded-lg shadow-primary mb-8 object-cover"
           />
 
           {/* Icons centered under image */}

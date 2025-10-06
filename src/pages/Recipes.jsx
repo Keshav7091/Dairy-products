@@ -110,15 +110,14 @@ const Recipes = () => {
         </h2>
         <p className="max-w-3xl mx-auto text-gray-700 text-lg leading-relaxed">
           At the heart of Indian cooking lies a deep connection to home,
-          heritage, and nourishment. With our fresh products, you
-          can now recreate the authentic taste of Indian meals — without
-          compromise, and without relying on frozen imports or powdered
-          substitutes.
+          heritage, and nourishment. With our fresh products, you can now
+          recreate the authentic taste of Indian meals — without compromise, and
+          without relying on frozen imports or powdered substitutes.
           <br />
           <br />
           Whether you’re preparing a weekday dinner, hosting friends for a
-          festival, or simply missing a dish your grandmother used to make — 
-          we’re here to help bring that moment back to your table.
+          festival, or simply missing a dish your grandmother used to make — we
+          ’re here to help bring that moment back to your table.
         </p>
       </section>
 
@@ -155,6 +154,28 @@ const Recipes = () => {
               </div>
             ))}
           </div>
+
+          {/* Show paneer videos only for Paneer category */}
+          {/* {cat.title.includes("Paneer") && (
+            <div className="mt-12 grid md:grid-cols-2 gap-8 justify-center">
+              <video
+                src="/recipes/01.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full rounded-2xl shadow-lg"
+              ></video>
+              <video
+                src="/recipes/02.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full rounded-2xl shadow-lg"
+              ></video>
+            </div>
+          )} */}
         </section>
       ))}
     </div>

@@ -9,7 +9,7 @@ const products = [
     name: "Paneer",
     extraLine: "Indian Cottage Cheese",
     subtitle: "Malai (Creamy Style)",
-    image: "/products/08.jfif",
+    image: "/products/08.jpg",
     description:
       "Our Malai Paneer is soft, rich, and indulgent—perfect for special curries like shahi paneer, malai kofta, or paneer butter masala. Made with full-fat milk and minimal processing, it holds shape during cooking but melts in the mouth when eaten.",
     features: [
@@ -22,7 +22,7 @@ const products = [
     name: "Paneer",
     extraLine: "Indian Cottage Cheese",
     subtitle: "Low Fat (High Protein)",
-    image: "/products/06.jpg",
+    image: "/products/01.jpg",
     // sizes: ["200g", "500g", "1000g vacuum-sealed blocks"],
     description:
       "This is the versatile, everyday paneer used in households and professional kitchens alike. Firm enough for grilling or frying, yet tender enough for bhurji, paratha stuffing, or salads. Fits the bill for calorie conscious consumers.",
@@ -36,7 +36,7 @@ const products = [
     name: "Desi Ghee",
     // extraLine: "Indian Cottage Cheese",
     subtitle: "(Clarified Butter)",
-    image: "/products/06.jpg",
+    image: "/products/09.jpg",
     // sizes: ["200g", "500g", "1000g vacuum-sealed blocks"],
     description:
       "This is the versatile, everyday paneer used in households and professional kitchens alike. Firm enough for grilling or frying, yet tender enough for bhurji, paratha stuffing, or salads. Fits the bill for calorie conscious consumers.",
@@ -50,7 +50,7 @@ const products = [
     name: "Oil Free Pickles",
     // extraLine: "Indian Cottage Cheese",
     subtitle: "(Fermented Goodness with Indian Spices )",
-    image: "/products/06.jpg",
+    image: "/products/06.jfif",
     // sizes: ["200g", "500g", "1000g vacuum-sealed blocks"],
     description:
       "This is the versatile, everyday paneer used in households and professional kitchens alike. Firm enough for grilling or frying, yet tender enough for bhurji, paratha stuffing, or salads. Fits the bill for calorie conscious consumers.",
@@ -75,23 +75,10 @@ const products = [
     ],
   },
   {
-    name: "Whey Protein",
-    // extraLine: "Indian Cottage Cheese",
-    image: "/products/05.jpg",
-    // sizes: ["500ml bottle", "1L pouch"],
-    description:
-      "Extracted naturally during the paneer-making process, our whey protein is a clean, vegetarian source of nutrition. Rich in amino acids, easy to digest, and completely free from additives.",
-    features: [
-      "Ideal for smoothies, fitness meals, and baking",
-      "Pasteurised and ready to use",
-      "Light, refreshing taste with nutritional depth",
-    ],
-  },
-  {
     name: "White Butter",
     // extraLine: "Indian Cottage Cheese",
     subtitle: "(Unsalted, Cow’s Milk)",
-    image: "/products/01.jpg",
+    image: "/products/11.jfif",
     // sizes: ["200g", "500g tubs"],
     description:
       "Hand-churned from fresh cream, this unsalted white butter is inspired by the traditional Indian ‘makhan’.",
@@ -99,6 +86,19 @@ const products = [
       "No salt or preservatives",
       "Soft, melt-in-mouth consistency",
       "Made in specially curated batches for a superior taste",
+    ],
+  },
+  {
+    name: "Whey Protein",
+    // extraLine: "Indian Cottage Cheese",
+    image: "/products/05.jfif",
+    // sizes: ["500ml bottle", "1L pouch"],
+    description:
+      "Extracted naturally during the paneer-making process, our whey protein is a clean, vegetarian source of nutrition. Rich in amino acids, easy to digest, and completely free from additives.",
+    features: [
+      "Ideal for smoothies, fitness meals, and baking",
+      "Pasteurised and ready to use",
+      "Light, refreshing taste with nutritional depth",
     ],
   },
 ];
@@ -177,7 +177,8 @@ const Products = () => {
           {products.slice(1).map((product, i) => (
             <div
               key={i}
-              className="bg-green-50 p-6 rounded-3xl shadow-md hover:shadow-2xl hover:scale-105 transition transform duration-300 border border-transparent hover:border-[#fb8c00] group"
+              className="bg-[#fb8c00]/10 p-6 rounded-3xl shadow-md hover:shadow-2xl 
+              hover:scale-101 transition transform duration-300 border border-transparent hover:border-[#fb8c00] group"
             >
               {/* Product Image */}
               <div className="w-full h-48 mb-4 overflow-hidden rounded-2xl">
@@ -202,7 +203,7 @@ const Products = () => {
                 {product.subtitle && (
                   <>
                     <br />
-                    <span className="text-gray-600 group-hover:text-[#fb8c00]/70 text-lg">
+                    <span className="text-gray-600  text-lg">
                       {product.subtitle}
                     </span>
                   </>
