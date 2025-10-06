@@ -156,7 +156,7 @@ const Recipes = () => {
           </div>
 
           {/* Show paneer videos only for Paneer category */}
-          {/* {cat.title.includes("Paneer") && (
+          {cat.title.includes("Paneer") && (
             <div className="mt-12 grid md:grid-cols-2 gap-8 justify-center">
               <video
                 src="/recipes/01.mp4"
@@ -175,7 +175,7 @@ const Recipes = () => {
                 className="w-full rounded-2xl shadow-lg"
               ></video>
             </div>
-          )} */}
+          )}
         </section>
       ))}
     </div>
