@@ -42,7 +42,7 @@ const Contact = () => {
     toast.loading("Submitting your enquiry...");
     try {
       await axios.post(
-        "https://backend-cows-choice.onrender.com/api/form/send",
+        "https://dairy-backend-bbk6.onrender.com/api/form/send",
         formData
       );
       toast.dismiss();
