@@ -41,13 +41,13 @@ const Story = () => {
   ];
 
   return (
-    <section className="container py-20 px-6 md:px-16">
+    <section className="container py-10 px-6 md:px-16">
       <Heading 
         title="Our Story" 
         subtitle="Locally made. Honestly crafted. Always real."
         align="center" 
         underline={true}
-        className="mb-16"
+        className="mb-10"
       />
 
       <div className="space-y-12">

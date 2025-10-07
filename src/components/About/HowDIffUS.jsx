@@ -5,7 +5,7 @@ import { FaCheck  } from "react-icons/fa";
 
 const HowDIffUS = () => {
   return (
-    <section className="container py-20 px-6 md:px-16">
+    <section className="container py-15 px-6 md:px-16">
       
       {/* Hero / Title */}
       <Heading 

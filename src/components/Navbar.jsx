@@ -32,8 +32,12 @@ const Navbar = () => {
   return (
     <nav className="bg-white shadow-md fixed w-full z-50" ref={navRef}>
       <div className="container flex justify-between items-center px-6 md:px-0 py-4">
-        {/* Logo */}
-        <NavLink to="/">
+        {/* Logo + Text (group clickable) */}
+        <NavLink
+          to="/"
+          className="flex items-center space-x-1 md:space-x-0 group"
+          onClick={() => setIsOpen(false)}
+        >
           <div className="h-16 w-auto flex items-center">
             <img
               src="/logo.jpg"
@@ -41,16 +45,23 @@ const Navbar = () => {
               className="max-h-full w-auto object-contain"
             />
           </div>
+          {/* Only show text on mobile */}
+          <div className="md:hidden flex flex-col leading-none text-cow-gradient font-extrabold text-center">
+            <span className="text-2xl">Cows</span>
+            <span className="text-xl">Choice</span>
+          </div>
         </NavLink>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex space-x-8 font-medium">
+        <ul className="hidden md:flex space-x-8 font-medium items-center">
           {navLinks.map((link) => (
-            <li key={link.name}>
+            <li key={link.name} className="flex items-center">
               <NavLink
                 to={link.path}
                 className={({ isActive }) =>
-                  isActive ? "nav-link nav-active" : "nav-link"
+                  `${
+                    isActive ? "nav-link nav-active" : "nav-link"
+                  } inline-flex items-center py-2 px-1 transition-all duration-200`
                 }
               >
                 {link.name}
@@ -124,7 +135,7 @@ const Navbar = () => {
         {/* Mobile Social Icons */}
         <div className="flex justify-center space-x-4 mt-4">
           <a
-            href="https://www.facebook.com/yourhandle"
+            href="https://www.facebook.com/share/1HxMYymZ5y/?mibextid=wwXIfr"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-blue-600 text-white w-10 h-10 flex items-center justify-center rounded-full shadow-lg hover:bg-blue-700 transition"
@@ -132,7 +143,7 @@ const Navbar = () => {
             <FaFacebookF />
           </a>
           <a
-            href="https://www.instagram.com/yourhandle"
+            href="https://www.instagram.com/cowschoice_milkproducts?igsh=b3ViYzl2b2F3dWx2&utm_source=qr"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-pink-500 text-white w-10 h-10 flex items-center justify-center rounded-full shadow-lg hover:bg-pink-600 transition"
@@ -140,7 +151,7 @@ const Navbar = () => {
             <FaInstagram />
           </a>
           <a
-            href="https://www.linkedin.com/in/yourhandle"
+            href="https://www.linkedin.com/company/cowschoice/"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-blue-700 text-white w-10 h-10 flex items-center justify-center rounded-full shadow-lg hover:bg-blue-800 transition"

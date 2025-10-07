@@ -27,20 +27,23 @@ const Footer = () => {
           </p>
           <div className="flex gap-4 mt-4">
             <a
-              href="#"
+              href="https://www.instagram.com/cowschoice_milkproducts?igsh=b3ViYzl2b2F3dWx2&utm_source=qr"
               className="hover:text-[#fb8c00] transition-transform transform hover:scale-125"
+              target="_blank"
             >
               <FaInstagram size={24} />
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/company/cowschoice/"
               className="hover:text-[#fb8c00] transition-transform transform hover:scale-125"
+              target="_blank"
             >
               <FaLinkedin size={24} />
             </a>
             <a
-              href="#"
+              href="https://www.facebook.com/share/1HxMYymZ5y/?mibextid=wwXIfr"
               className="hover:text-[#fb8c00] transition-transform transform hover:scale-125"
+              target="_blank"
             >
               <FaFacebook size={24} />
             </a>
@@ -76,9 +79,9 @@ const Footer = () => {
             <input
               type="email"
               placeholder="Enter your email"
-              className="px-4 py-3 rounded-full text-white w-full sm:w-auto focus:outline-none border border-gray-600"
+              className="px-3 py-3 rounded-full text-white w-full sm:w-auto focus:outline-none border border-gray-600"
             />
-            <button className="btn btn-primary px-5 py-3 rounded-full font-semibold transition-colors">
+            <button className="btn btn-primary px-4 py-3 rounded-full font-semibold transition-colors">
               Subscribe
             </button>
           </form>

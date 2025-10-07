@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const PartnerWithUs = () => {
   return (
-    <section className="relative py-20 sm:py-28 lg:py-32 bg-gray-50 overflow-hidden">
+    <section className="relative py-8 sm:py-15 lg:py-20 bg-image">
       <div className="container mx-auto px-6 sm:px-10 lg:px-12 xl:px-20 relative z-10">
         <div className="flex flex-col md:flex-row items-center gap-8 md:gap-16">
           {/* Left Text Block */}

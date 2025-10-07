@@ -125,7 +125,7 @@ const Recipes = () => {
       {recipeCategories.map((cat, i) => (
         <section
           key={i}
-          className={`py-20 px-6 md:px-16 ${
+          className={`py-10 px-6 md:px-16 ${
             i % 2 === 1 ? "bg-light/50" : "bg-white"
           }`}
         >
@@ -135,7 +135,6 @@ const Recipes = () => {
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">{cat.description}</p>
           </div>
-
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {cat.items.map((item, j) => (
               <div
@@ -154,26 +153,25 @@ const Recipes = () => {
               </div>
             ))}
           </div>
-
           {/* Show paneer videos only for Paneer category */}
           {cat.title.includes("Paneer") && (
-            <div className="mt-12 grid md:grid-cols-2 gap-8 justify-center">
-              <video
-                src="/recipes/01.mp4"
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="w-full rounded-2xl shadow-lg"
-              ></video>
-              <video
-                src="/recipes/02.mp4"
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="w-full rounded-2xl shadow-lg"
-              ></video>
+            <div className="mt-12 grid md:grid-cols-2 gap-6">
+              {["/recipes/01.mp4", "/recipes/02.mp4"].map((src, idx) => (
+                <div
+                  key={idx}
+                  className="relative rounded-2xl overflow-hidden shadow-xl group cursor-pointer transform transition duration-500 hover:scale-105"
+                >
+                  <video
+                    src={src}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="w-full h-60 object-cover"
+                  ></video>
+                  
+                </div>
+              ))}
             </div>
           )}
         </section>

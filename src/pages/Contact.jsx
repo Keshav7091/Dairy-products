@@ -124,8 +124,8 @@ const Contact = () => {
       </section>
 
       {/* Form + Info */}
-      <div className="bg-image">
-        <section className="py-20 container mx-auto px-6 max-w-6xl grid md:grid-cols-2 gap-12 items-start">
+      <div className="bg-image py-10 md:py-20">
+        <section className="container mx-auto px-6 max-w-6xl grid md:grid-cols-2 gap-12 items-start">
           {/* Left: Form */}
           <div className="backdrop-blur-lg border border-secondary/30 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
             <h3 className="text-3xl font-bold mb-6 text-secondary">

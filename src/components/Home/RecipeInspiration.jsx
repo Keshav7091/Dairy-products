@@ -9,11 +9,11 @@ const RecipeInspiration = () => {
   const recipes = [
     { name: "Palak Paneer", image: "/products/04.jpg" },
     { name: "Gulab Jamun", image: "/products/02.jpg" },
-    { name: "Paneer Tikka Wrap", image: "/products/07.avif" },
+    { name: "Paneer Tikka Wrap", image: "/products/06.avif" },
   ];
 
   return (
-    <section className="py-24 bg-image">
+    <section className="py-10">
       <div className="container mx-auto px-6 lg:px-12 xl:px-20">
         {/* --- Quick Recipe Inspiration --- */}
         <div className="mb-24 text-center">

@@ -5,7 +5,7 @@ const SocialFloating = () => {
   return (
     <div className="hidden md:flex fixed top-1/4 left-0 flex-col space-y-4 z-50">
       <a
-        href="https://www.facebook.com/yourhandle"
+        href="https://www.facebook.com/share/1HxMYymZ5y/?mibextid=wwXIfr"
         target="_blank"
         rel="noopener noreferrer"
         className="bg-blue-600 text-white w-10 h-10 flex items-center justify-center rounded-r-lg shadow-lg hover:bg-blue-700 transition"
@@ -13,7 +13,7 @@ const SocialFloating = () => {
         <FaFacebookF />
       </a>
       <a
-        href="https://www.instagram.com/yourhandle"
+        href="https://www.instagram.com/cowschoice_milkproducts?igsh=b3ViYzl2b2F3dWx2&utm_source=qr"
         target="_blank"
         rel="noopener noreferrer"
         className="bg-pink-500 text-white w-10 h-10 flex items-center justify-center rounded-r-lg shadow-lg hover:bg-pink-600 transition"
@@ -21,7 +21,7 @@ const SocialFloating = () => {
         <FaInstagram />
       </a>
       <a
-        href="https://www.linkedin.com/in/yourhandle"
+        href="https://www.linkedin.com/company/cowschoice/"
         target="_blank"
         rel="noopener noreferrer"
         className="bg-blue-700 text-white w-10 h-10 flex items-center justify-center rounded-r-lg shadow-lg hover:bg-blue-800 transition"

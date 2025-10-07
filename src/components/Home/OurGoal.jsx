@@ -7,7 +7,7 @@ import Heading from "../Heading";
 
 const OurGoal = () => {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-10 md:py-15 bg-white">
       <div className="container mx-auto px-6 lg:px-12 xl:px-20">
         {/* Heading */}
         <Heading 

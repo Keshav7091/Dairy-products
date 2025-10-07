@@ -6,7 +6,7 @@ import Heading from "../Heading";
 
 const AboutUS = () => {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-10 md:py-20  bg-white">
       <div className="container mx-auto px-6 lg:px-12 xl:px-20 flex flex-col md:flex-row items-start gap-10">
         {/* ⬅️ Left Content Block */}
         <div className="md:w-1/2 order-2 md:order-1">

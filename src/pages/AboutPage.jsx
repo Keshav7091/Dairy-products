@@ -53,12 +53,12 @@ const AboutPage = () => {
       <PageBanner title="About Us" />
 
       {/* Hero Section */}
-      <section className="py-24 px-6 md:px-20 bg-gray-50">
+      <section className="py-10 md:py-24 px-6 md:px-20 bg-gray-50">
         <div className="max-w-6xl mx-auto md:flex md:items-center md:gap-16 relative">
           {/* Left Content */}
           <div className="md:w-1/2 mb-10 md:mb-0 relative">
             <h3
-              className="text-2xl sm:text-3xl md:text-5xl leading-snug mb-6 text-left md:text-left whitespace-nowrap"
+              className="text-2xl sm:text-3xl md:text-5xl leading-snug mb-6 text-left md:text-left whitespace-nowrap font-bold"
               style={{ fontFamily: "Georgia, serif" }}
             >
               Welcome to{" "}

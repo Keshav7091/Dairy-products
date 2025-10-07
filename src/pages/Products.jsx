@@ -9,7 +9,7 @@ const products = [
     name: "Paneer",
     extraLine: "Indian Cottage Cheese",
     subtitle: "Malai (Creamy Style)",
-    image: "/products/08.jpg",
+    image: "/products/07.jpg",
     description:
       "Our Malai Paneer is soft, rich, and indulgent—perfect for special curries like shahi paneer, malai kofta, or paneer butter masala. Made with full-fat milk and minimal processing, it holds shape during cooking but melts in the mouth when eaten.",
     features: [
@@ -36,7 +36,7 @@ const products = [
     name: "Desi Ghee",
     // extraLine: "Indian Cottage Cheese",
     subtitle: "(Clarified Butter)",
-    image: "/products/09.jpg",
+    image: "/products/08.jpg",
     // sizes: ["200g", "500g", "1000g vacuum-sealed blocks"],
     description:
       "This is the versatile, everyday paneer used in households and professional kitchens alike. Firm enough for grilling or frying, yet tender enough for bhurji, paratha stuffing, or salads. Fits the bill for calorie conscious consumers.",
@@ -50,7 +50,7 @@ const products = [
     name: "Oil Free Pickles",
     // extraLine: "Indian Cottage Cheese",
     subtitle: "(Fermented Goodness with Indian Spices )",
-    image: "/products/06.jfif",
+    images: ["/products/10.jpg", "/products/11.jpg"],
     // sizes: ["200g", "500g", "1000g vacuum-sealed blocks"],
     description:
       "This is the versatile, everyday paneer used in households and professional kitchens alike. Firm enough for grilling or frying, yet tender enough for bhurji, paratha stuffing, or salads. Fits the bill for calorie conscious consumers.",
@@ -78,7 +78,7 @@ const products = [
     name: "White Butter",
     // extraLine: "Indian Cottage Cheese",
     subtitle: "(Unsalted, Cow’s Milk)",
-    image: "/products/11.jfif",
+    image: "/products/09.jfif",
     // sizes: ["200g", "500g tubs"],
     description:
       "Hand-churned from fresh cream, this unsalted white butter is inspired by the traditional Indian ‘makhan’.",
@@ -180,14 +180,32 @@ const Products = () => {
               className="bg-[#fb8c00]/10 p-6 rounded-3xl shadow-md hover:shadow-2xl 
               hover:scale-101 transition transform duration-300 border border-transparent hover:border-[#fb8c00] group"
             >
-              {/* Product Image */}
-              <div className="w-full h-48 mb-4 overflow-hidden rounded-2xl">
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-              </div>
+              {product.images ? (
+                // 🥒 Oil Free Pickles: Smooth Hover Swap with full image
+                <div
+                  className="relative w-full mb-4 rounded-2xl overflow-hidden group"
+                  style={{ paddingTop: "75%" }}
+                >
+                  <img
+                    src={product.images[0]}
+                    alt={product.name}
+                    className="absolute top-0 left-0 w-full h-full object-scale-down rounded-full transition-opacity duration-700 ease-in-out opacity-100 group-hover:opacity-0"
+                  />
+                  <img
+                    src={product.images[1]}
+                    alt={product.name}
+                    className="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out opacity-0 group-hover:opacity-100"
+                  />
+                </div>
+              ) : (
+                <div className="w-full h-48 mb-4 overflow-hidden rounded-2xl">
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+              )}
 
               {/* Product Name */}
               <h2 className="text-2xl font-bold mb-2 transition-colors duration-300 group-hover:text-[#fb8c00]">

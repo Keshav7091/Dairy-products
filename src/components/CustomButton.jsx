@@ -14,10 +14,11 @@ const CustomButton = ({
   text,
   link = "#",
   type = "link",
-  marginTop = "mt-8",
+  marginTop = "mt-2 md:mt-5",
   textAlign = "text-center",
+  className = ""
 }) => {
-  const baseClasses = `${marginTop} px-12 py-3 rounded-full text-white font-semibold transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1 btn btn-primary hover:bg-green-500 ${textAlign}`;
+  const baseClasses = `${marginTop} ${className} px-12 rounded-full text-white font-semibold transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1 btn btn-primary hover:bg-green-500 ${textAlign}`;
 
   if (type === "button") {
     return <button className={baseClasses}>{text}</button>;
