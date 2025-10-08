@@ -46,9 +46,11 @@ const Navbar = () => {
             />
           </div>
           {/* Only show text on mobile */}
-          <div className="md:hidden flex flex-col leading-none text-cow-gradient font-extrabold text-center">
-            <span className="text-2xl">Cows</span>
-            <span className="text-xl">Choice</span>
+          {/* Only show text on mobile */}
+          {/* Only show text on mobile */}
+          <div className="md:hidden flex flex-col text-cow-gradient font-extrabold text-center leading-none">
+            <span className="text-3xl">Cows</span>
+            <span className="text-2xl -mt-2">Choice</span>
           </div>
         </NavLink>
 
