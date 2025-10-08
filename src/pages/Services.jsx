@@ -62,7 +62,7 @@ const whyChooseUs = [
     id: 1,
     icon: <CheckCircle className="w-8 h-8 text-secondary" />,
     title: "Authentic & Fresh",
-    description: "Traditional Indian recipes with UK-sourced milk.",
+    description: "Traditional Indian recipes with ethically-sourced milk.",
   },
   {
     id: 2,
@@ -80,10 +80,10 @@ const whyChooseUs = [
 
 const Services = () => {
   return (
-    <div className="py-15">
+    <div className="py-15 bg-gray-50">
       <PageBanner title="Services" />
 
-      <section className="py-16 bg-gray-50" id="services">
+      <section className="py-16" id="services">
         <div className="container px-6 lg:px-20">
           {/* Services Heading */}
           <Heading

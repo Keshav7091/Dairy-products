@@ -2,6 +2,33 @@ import React from "react";
 import CustomButton from "../CustomButton";
 import Heading from "../Heading";
 
+// 🔄 Auto Image Switch Component (only used for Low Oil Pickles)
+const AutoImageSwitch = ({ images, name }) => {
+  const [current, setCurrent] = React.useState(0);
+
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+    }, 3000); // switch every 3 seconds
+    return () => clearInterval(interval);
+  }, [images]);
+
+  return (
+    <div className="relative w-full h-48 overflow-hidden rounded-2xl">
+      {images.map((img, idx) => (
+        <img
+          key={idx}
+          src={img}
+          alt={name}
+          className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${
+            idx === current ? "opacity-100" : "opacity-0"
+          }`}
+        />
+      ))}
+    </div>
+  );
+};
+
 const products = [
   {
     name: "Paneer",
@@ -27,7 +54,7 @@ const products = [
       "Firm enough for grilling or frying, yet tender enough for bhurji, paratha stuffing, or salads.",
   },
   {
-    name: "Oil Free Pickles",
+    name: "Low Oil Pickles",
     subtitle: "(Fermented Goodness with Indian Spices )",
     images: ["/products/10.jpg", "/products/11.jpg"],
     description:
@@ -64,28 +91,15 @@ const ProductItem = ({ product, reverse }) => (
     }`}
   >
     {/* Image */}
-    {/* Image */}
     <div className="lg:w-2/6 w-full overflow-hidden rounded-2xl group">
       {product.images ? (
-        <div className="relative w-full h-48">
-          {" "}
-          {/* chhoti height set ki */}
-          <img
-            src={product.images[0]}
-            alt={product.name}
-            className="absolute top-0 left-0 w-full h-full object-top transition-opacity duration-700 ease-in-out opacity-100 group-hover:opacity-0 rounded-2xl"
-          />
-          <img
-            src={product.images[1]}
-            alt={product.name}
-            className="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out opacity-0 group-hover:opacity-100 rounded-2xl"
-          />
-        </div>
+        // 👉 Only Low Oil Pickles auto switch karega
+        <AutoImageSwitch images={product.images} name={product.name} />
       ) : (
         <img
           src={product.image}
           alt={product.name}
-          className="w-full h-48 object-cover rounded-2xl hover:scale-105 transition transform duration-300" // chhoti height
+          className="w-full h-48 object-cover rounded-2xl hover:scale-105 transition transform duration-300"
         />
       )}
     </div>
@@ -123,7 +137,7 @@ const ProductItem = ({ product, reverse }) => (
 
 const Products = () => {
   return (
-    <div className=" py-10">
+    <div className="py-2">
       <div className="container pt-10">
         <Heading
           title={"Our Products"}

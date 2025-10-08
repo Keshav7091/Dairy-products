@@ -4,6 +4,36 @@ import { FiCheck } from "react-icons/fi";
 import CustomButton from "../components/CustomButton";
 import Heading from "../components/Heading";
 
+// 🪄 Auto Image Switch Component
+const AutoImageSwitch = ({ images, name }) => {
+  const [current, setCurrent] = React.useState(0);
+
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+    }, 3000); // change every 3 seconds
+    return () => clearInterval(interval);
+  }, [images]);
+
+  return (
+    <div
+      className="relative w-full mb-4 rounded-2xl overflow-hidden"
+      style={{ paddingTop: "75%" }}
+    >
+      {images.map((img, idx) => (
+        <img
+          key={idx}
+          src={img}
+          alt={name}
+          className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${
+            idx === current ? "opacity-100" : "opacity-0"
+          }`}
+        />
+      ))}
+    </div>
+  );
+};
+
 const products = [
   {
     name: "Paneer",
@@ -23,7 +53,6 @@ const products = [
     extraLine: "Indian Cottage Cheese",
     subtitle: "Low Fat (High Protein)",
     image: "/products/01.jpg",
-    // sizes: ["200g", "500g", "1000g vacuum-sealed blocks"],
     description:
       "This is the versatile, everyday paneer used in households and professional kitchens alike. Firm enough for grilling or frying, yet tender enough for bhurji, paratha stuffing, or salads. Fits the bill for calorie conscious consumers.",
     features: [
@@ -34,30 +63,26 @@ const products = [
   },
   {
     name: "Desi Ghee",
-    // extraLine: "Indian Cottage Cheese",
     subtitle: "(Clarified Butter)",
     image: "/products/08.jpg",
-    // sizes: ["200g", "500g", "1000g vacuum-sealed blocks"],
     description:
-      "This is the versatile, everyday paneer used in households and professional kitchens alike. Firm enough for grilling or frying, yet tender enough for bhurji, paratha stuffing, or salads. Fits the bill for calorie conscious consumers.",
+      "This pure desi ghee is made from fresh cream, slow-cooked to retain its rich aroma and granular texture. Perfect for daily cooking, sweets, and traditional recipes.",
     features: [
-      "Low-fat, cow’s milk",
-      "Clean taste with balanced firmness",
-      "Cooks evenly and absorbs spices beautifully",
+      "Made from cow’s milk cream",
+      "Rich aroma and golden texture",
+      "Ideal for sweets and festive dishes",
     ],
   },
   {
-    name: "Oil Free Pickles",
-    // extraLine: "Indian Cottage Cheese",
-    subtitle: "(Fermented Goodness with Indian Spices )",
+    name: "Low Oil Pickles",
+    subtitle: "(Fermented Goodness with Indian Spices)",
     images: ["/products/10.jpg", "/products/11.jpg"],
-    // sizes: ["200g", "500g", "1000g vacuum-sealed blocks"],
     description:
-      "This is the versatile, everyday paneer used in households and professional kitchens alike. Firm enough for grilling or frying, yet tender enough for bhurji, paratha stuffing, or salads. Fits the bill for calorie conscious consumers.",
+      "Our Low Oil Pickles bring authentic Indian taste with a healthy twist. Naturally fermented, spiced perfectly, and prepared using minimal oil to retain nutrition and freshness.",
     features: [
-      "Low-fat, cow’s milk",
-      "Clean taste with balanced firmness",
-      "Cooks evenly and absorbs spices beautifully",
+      "Low in oil, high in flavor",
+      "Naturally fermented with traditional spices",
+      "Handcrafted in small batches for authentic taste",
     ],
   },
   {
@@ -65,7 +90,6 @@ const products = [
     extraLine: "Granular & Smooth",
     subtitle: "(Mawa)",
     image: "/products/03.png",
-    // sizes: ["200g", "500g blocks (granular or smooth)"],
     description:
       "Khoya is slow-cooked from fresh milk—never reconstituted—giving it a rich, caramelised texture perfect for gulab jamun, barfi, pedas, and halwa.",
     features: [
@@ -76,10 +100,8 @@ const products = [
   },
   {
     name: "White Butter",
-    // extraLine: "Indian Cottage Cheese",
     subtitle: "(Unsalted, Cow’s Milk)",
     image: "/products/09.jfif",
-    // sizes: ["200g", "500g tubs"],
     description:
       "Hand-churned from fresh cream, this unsalted white butter is inspired by the traditional Indian ‘makhan’.",
     features: [
@@ -90,9 +112,7 @@ const products = [
   },
   {
     name: "Whey Protein",
-    // extraLine: "Indian Cottage Cheese",
     image: "/products/05.jfif",
-    // sizes: ["500ml bottle", "1L pouch"],
     description:
       "Extracted naturally during the paneer-making process, our whey protein is a clean, vegetarian source of nutrition. Rich in amino acids, easy to digest, and completely free from additives.",
     features: [
@@ -180,23 +200,10 @@ const Products = () => {
               className="bg-[#fb8c00]/10 p-6 rounded-3xl shadow-md hover:shadow-2xl 
               hover:scale-101 transition transform duration-300 border border-transparent hover:border-[#fb8c00] group"
             >
+              {/* Image Section */}
               {product.images ? (
-                // 🥒 Oil Free Pickles: Smooth Hover Swap with full image
-                <div
-                  className="relative w-full mb-4 rounded-2xl overflow-hidden group"
-                  style={{ paddingTop: "75%" }}
-                >
-                  <img
-                    src={product.images[0]}
-                    alt={product.name}
-                    className="absolute top-0 left-0 w-full h-full object-scale-down rounded-full transition-opacity duration-700 ease-in-out opacity-100 group-hover:opacity-0"
-                  />
-                  <img
-                    src={product.images[1]}
-                    alt={product.name}
-                    className="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out opacity-0 group-hover:opacity-100"
-                  />
-                </div>
+                // 🥒 Low Oil Pickles: Auto Image Switch
+                <AutoImageSwitch images={product.images} name={product.name} />
               ) : (
                 <div className="w-full h-48 mb-4 overflow-hidden rounded-2xl">
                   <img
@@ -221,7 +228,7 @@ const Products = () => {
                 {product.subtitle && (
                   <>
                     <br />
-                    <span className="text-gray-600  text-lg">
+                    <span className="text-gray-600 text-lg">
                       {product.subtitle}
                     </span>
                   </>

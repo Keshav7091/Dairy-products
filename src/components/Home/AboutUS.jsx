@@ -6,7 +6,7 @@ import Heading from "../Heading";
 
 const AboutUS = () => {
   return (
-    <section className="py-10 md:py-20  bg-white">
+    <section className="pt-10 md:pt-20 pb-10 bg-white">
       <div className="container mx-auto px-6 lg:px-12 xl:px-20 flex flex-col md:flex-row items-start gap-10">
         {/* ⬅️ Left Content Block */}
         <div className="md:w-1/2 order-2 md:order-1">
@@ -30,7 +30,7 @@ const AboutUS = () => {
           <p className="text-gray-600 mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
             We’re a UK-based dairy brand bringing authentic Indian flavours to
             your table. Our products are made in carefully curated batches using
-            fresh milk from local UK cows. From paneer that cooks like homemade,
+            fresh milk from local cows. From paneer that cooks like homemade,
             to khoya that makes mithais unforgettable, we honour tradition while
             upholding British quality standards.
           </p>
@@ -47,9 +47,9 @@ const AboutUS = () => {
             </h3>
             <ul className="space-y-3 text-gray-700 text-sm md:text-base">
               {[
-                "100% UK-farmed milk, carefully tested and responsibly sourced",
+                "100% ethical sourced milk, Carefully tested and responsibly sourced milk from across UK & Europe",
                 "Carefully curated production batches for unmatched freshness",
-                "Rooted in Indian tradition, refined for UK kitchens",
+                "Rooted in Indian tradition, refined for International kitchens",
                 "Supporting local farmers and ethical sourcing",
                 "Aligned with EU’s Farm to Fork values",
               ].map((item, i) => (

@@ -35,7 +35,7 @@ const OurGoal = () => {
             <GiBullseye className="text-secondary text-5xl mb-4" />
             <h3 className="text-2xl font-bold text-gray-800 mb-2">Our Mission</h3>
             <p className="text-gray-600">
-              Build a bridge between Indian tradition and British quality, local
+              Build a bridge between Indian tradition and International quality, local
               farms and modern kitchens.
             </p>
           </div>

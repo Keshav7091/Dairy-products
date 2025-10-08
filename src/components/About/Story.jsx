@@ -32,7 +32,7 @@ const Story = () => {
     {
       title: "What We’re Building",
       text: [
-        "A bridge between cultures — where Indian traditions meet British quality.",
+        "A bridge between cultures — where Indian traditions meet International quality.",
         "A community of trust — for consumers who want honest ingredients.",
         "A platform for growth — for local farmers, small retailers, and chefs seeking authenticity.",
         "This isn’t about scaling fast. It’s about growing right.",
@@ -41,7 +41,7 @@ const Story = () => {
   ];
 
   return (
-    <section className="container py-10 px-6 md:px-16">
+    <section className="container py-0 md:py-10 px-6 md:px-16">
       <Heading 
         title="Our Story" 
         subtitle="Locally made. Honestly crafted. Always real."

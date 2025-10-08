@@ -40,7 +40,7 @@ const HowDIffUS = () => {
             </li>
             <li className="flex items-start gap-3">
               <FaCheck  className="text-secondary text-xl mt-1" />
-              Traditional Indian recipes perfected with UK hygiene and safety standards.
+              Traditional Indian recipes perfected with hygiene and safety standards.
             </li>
             <li className="flex items-start gap-3">
               <FaCheck  className="text-secondary  text-xl mt-1" />

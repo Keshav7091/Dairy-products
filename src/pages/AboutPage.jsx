@@ -9,7 +9,7 @@ import Heading from "../components/Heading";
 const sustainabilitySections = [
   {
     title: "Locally Sourced Milk, Always",
-    text: "All our milk comes from cows raised on farms across the UK. This means:",
+    text: "All our milk comes from cows raised on farms across the Europe and UK. This means:",
     list: [
       "Fewer food miles: No long-haul transport or imported ingredients",
       "Fresher product: From farm to facility within hours",
@@ -19,7 +19,7 @@ const sustainabilitySections = [
   {
     title: "No Long Supply Chains. No Artificial Shortcuts.",
     list: [
-      "Made in the UK, reducing refrigeration needs and packaging waste",
+      "Made in the UK, Reducing refrigeration needs and packaging waste",
       "Delivered fresh, not deep-frozen",
       "Produced in specially curated batches, lowering energy use and preventing excess inventory",
     ],
@@ -48,7 +48,7 @@ const sustainabilitySections = [
 
 const AboutPage = () => {
   return (
-    <div className="bg-gray-50 py-15">
+    <div className="bg-gray-50 pt-15">
       {/* Page Banner */}
       <PageBanner title="About Us" />
 
@@ -127,7 +127,7 @@ const AboutPage = () => {
           {sustainabilitySections.map((sec, i) => (
             <div key={i}>
               {sec.title && (
-                <h3 className="text-xl font-semibold text-secondary mb-2">
+                <h3 className="text-xl font-semibold mb-2">
                   {sec.title}
                 </h3>
               )}
