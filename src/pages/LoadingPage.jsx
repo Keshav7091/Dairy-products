@@ -20,8 +20,6 @@ const LoadingPage = () => {
           height: 250,
           borderRadius: "100%",
           overflow: "hidden",
-          boxShadow: "0 0 20px rgba(0,0,0,0.1)",
-          border: "4px solid #e4e4e4",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
