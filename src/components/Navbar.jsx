@@ -30,7 +30,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="bg-white shadow-md fixed w-full z-50" ref={navRef}>
+    <nav className="bg-white shadow-md fixed w-full z-40" ref={navRef}>
       <div className="container flex justify-between items-center px-6 md:px-0 py-4">
         {/* Logo + Text (group clickable) */}
         <NavLink

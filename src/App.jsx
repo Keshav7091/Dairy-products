@@ -1,23 +1,33 @@
-import react from 'react'
+import React, { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import './App.css'
-import Navbar from '../src/components/Navbar'
-import Footer from '../src/components/Footer'
-
-import Home from '../src/pages/Home'
-import Contact from '../src/pages/Contact'
-import AboutPage from '../src/pages/AboutPage'
-import Recipes from './pages/Recipes';
-import Products from './pages/Products';
-import Services from './pages/Services';
-import ScrollToTop from './components/ScrollToTop';
+import "./App.css";
+import Navbar from "../src/components/Navbar";
+import Footer from "../src/components/Footer";
+import Home from "../src/pages/Home";
+import Contact from "../src/pages/Contact";
+import AboutPage from "../src/pages/AboutPage";
+import Recipes from "./pages/Recipes";
+import Products from "./pages/Products";
+import Services from "./pages/Services";
+import ScrollToTop from "./components/ScrollToTop";
 import ProductDetail from "./pages/ProductDetail";
-import SocialFloating from './components/SocialFloating';
+import SocialFloating from "./components/SocialFloating";
+import LoadingPage from "./pages/LoadingPage";
 
 function App() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 4000);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
-    <div className="font-sans">
+    <div className="font-sans relative">
+      {loading && <LoadingPage />}
+
       {/* Navbar is visible on all pages */}
       <Navbar />
       <SocialFloating />
@@ -27,17 +37,17 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<AboutPage />} />
-        <Route path='/recipes' element={ <Recipes /> } />
-        <Route path='/products' element={ <Products /> } /> 
+        <Route path="/recipes" element={<Recipes />} />
+        <Route path="/products" element={<Products />} />
         <Route path="/products/:id" element={<ProductDetail />} />
-        <Route path='/services' element={ <Services /> } />
+        <Route path="/services" element={<Services />} />
       </Routes>
 
       {/* Footer is visible on all pages */}
       <Footer />
       <ScrollToTop />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
