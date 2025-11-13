@@ -25,7 +25,7 @@ const Footer = () => {
       // Send only the email to /subscribe endpoint
       await axios.post(
         // "http://localhost:5050/api/form/subscribe",
-        "https://dairy-backend-bbk6.onrender.com/api/form/subscribe",
+        "https://api.cowschoice.com/api/form/subscribe",
         { email: subscribeEmail }
       );
       toast.dismiss();
