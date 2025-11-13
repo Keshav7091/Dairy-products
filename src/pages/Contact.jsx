@@ -74,17 +74,15 @@ const Contact = () => {
       <section className="py-20 bg-gradient-to-b from-light via-gray-50 to-light relative overflow-hidden">
         <div className="container mx-auto px-6 text-center max-w-5xl relative z-10">
           <h2 className="text-4xl md:text-6xl font-extrabold mb-6 leading-snug capitalize">
-            <span className="text-cow-gradient">
-              Let’s Bring Real Indian dairy
-            </span>
+            <span className="text-cow-gradient">Our Mission is to bring</span>
             <br />
-            to more tables — together.
+            Real , Authentic , Traditional Products to your table
           </h2>
 
           <p className="text-gray-700 mb-10 leading-relaxed text-lg md:text-xl">
             Whether you’re a retailer, restaurant, distributor, or an
-            independent business looking for high-quality, milk and
-            milk-based products — we’d love to hear from you.
+            independent business looking for high-quality, milk and milk-based
+            products — we’d love to hear from you.
           </p>
 
           <div className="grid md:grid-cols-2 gap-6 mb-12">
@@ -195,7 +193,14 @@ const Contact = () => {
                   Products of Interest:
                 </p>
                 <div className="grid grid-cols-2 gap-3 text-base md:text-lg">
-                  {["Paneer","Khoya","White Butter","Shrikhand","Whey","Other"].map((product) => (
+                  {[
+                    "Paneer",
+                    "Khoya",
+                    "White Butter",
+                    "Shrikhand",
+                    "Whey",
+                    "Other",
+                  ].map((product) => (
                     <label key={product} className="flex items-center gap-2">
                       <input
                         type="checkbox"
@@ -263,16 +268,18 @@ const Contact = () => {
                 <MdOutlinePhone className="text-secondary text-2xl" />
                 <div>
                   <h4 className="font-semibold text-primary">Phone</h4>
-                  <a href="tel:+44xxxxxx" className="hover:text-[#fb8c00]">
-                    +44 xxxx xxxxxx
+                  <a href="tel:+447344520666" className="hover:text-[#fb8c00]">
+                    +44 7344520666
                   </a>
                 </div>
               </div>
               <div className="flex items-start gap-4">
                 <MdOutlineLocationOn className="text-secondary text-2xl" />
                 <div>
-                  <h4 className="font-semibold text-primary">Registered Office</h4>
-                  <p>London, United Kingdom</p>
+                  <h4 className="font-semibold text-primary">
+                    Registered Office
+                  </h4>
+                  <p>45 Fitzroy St, London W1T 6EB,United Kingdom</p>
                 </div>
               </div>
             </div>
