@@ -33,6 +33,7 @@ const LoadingPage = () => {
           autoPlay
           loop
           muted
+          preload="auto"
           playsInline
           style={{
             height: "100%",
@@ -45,6 +46,8 @@ const LoadingPage = () => {
               e.target.playbackRate = 1.5;
             }
           }}
+          // Hints to browser to fetch and decode aggressively for ASAP start
+          data-priority="high"
         />
       </div>
     </div>
