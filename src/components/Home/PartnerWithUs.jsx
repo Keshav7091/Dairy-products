@@ -9,7 +9,7 @@ const PartnerWithUs = () => {
         <div className="flex flex-col md:flex-row items-center gap-8 md:gap-16">
           {/* Left Text Block */}
           <div className="flex-1 relative text-center md:text-left">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary mb-4 sm:mb-6 leading-tight ">
+            <h2 className="text-3xl font-serif sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary mb-4 sm:mb-6 leading-tight ">
               Partner With Us
             </h2>
             <p className="text-gray-700 text-base sm:text-lg md:text-xl max-w-lg mx-auto md:mx-0 mb-6">

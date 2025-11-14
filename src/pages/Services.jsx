@@ -106,7 +106,7 @@ const Services = () => {
                   {service.icon}
                 </div>
                 <h3
-                  className="text-xl font-semibold text-gray-800 mb-3 text-center 
+                  className="text-xl font-serif font-semibold text-gray-800 mb-3 text-center 
                   transition-colors duration-300 group-hover:text-[#fb8c00]" // hover color
                 >
                   {service.title}
@@ -135,7 +135,7 @@ const Services = () => {
                 <div className="flex justify-center mb-4">{item.icon}</div>
                 <h3
                   className="text-lg font-semibold text-gray-800 mb-2 text-center 
-                  transition-colors duration-300 group-hover:text-[#fb8c00]" // hover color
+                  transition-colors font-serif duration-300 group-hover:text-[#fb8c00]" // hover color
                 >
                   {item.title}
                 </h3>
@@ -152,7 +152,7 @@ const Services = () => {
                 "linear-gradient(to right,#c62828,#fb8c00,#f48fb1,#6d4c41)",
             }}
           >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Trade Enquiries Welcome</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 font-serif">Trade Enquiries Welcome</h2>
             <p className="mb-6 max-w-xl mx-auto text-base sm:text-lg">
               Looking to stock our products or partner with us? Get in touch today for wholesale pricing, bulk orders, and distributor opportunities.
             </p>

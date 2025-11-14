@@ -27,7 +27,7 @@ const Heading = ({
   return (
     <div className={`mb-6 ${className} ${alignment}`}>
       <h2
-        className={`font-bold font-sans ${sizeClasses[size] || sizeClasses["5xl"]} text-black mb-2 ${
+        className={`font-bold font-serif ${sizeClasses[size] || sizeClasses["5xl"]} text-black mb-2 ${
           underline ? "border-b-4 border-primary inline-block pb-1" : ""
         }`}
       >

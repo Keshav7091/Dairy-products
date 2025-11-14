@@ -152,7 +152,7 @@ const Products = () => {
             {/* Content Right */}
             <div className="lg:w-3/4 flex flex-col justify-between">
               <div>
-                <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-gray-900">
+                <h2 className="text-3xl lg:text-4xl font-serif font-bold mb-4 text-gray-900">
                   {products[0].name}
                   {products[0].extraLine && (
                     <>
@@ -215,7 +215,7 @@ const Products = () => {
               )}
 
               {/* Product Name */}
-              <h2 className="text-2xl font-bold mb-2 transition-colors duration-300 group-hover:text-[#fb8c00]">
+              <h2 className="text-2xl font-serif font-bold mb-2 transition-colors duration-300 group-hover:text-[#fb8c00]">
                 {product.name}
                 {product.extraLine && (
                   <>

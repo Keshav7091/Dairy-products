@@ -107,19 +107,22 @@ const ProductItem = ({ product, reverse }) => (
     {/* Content */}
     <div className="lg:w-4/6 w-full flex flex-col justify-center text-center lg:text-left p-2">
       <h2 className="text-2xl font-bold mb-2 text-gray-900">
-        {product.name}
-        {product.extraLine && (
-          <>
-            <br />
-            <span className="text-[#6d4c41] font-semibold">
-              {product.extraLine}
-            </span>
-          </>
-        )}
+        <span className="font-serif">{product.name}</span>
+
+        <span className="font-serif">
+          {product.extraLine && (
+            <>
+              <br />
+              <span className="text-[#6d4c41] font-semibold">
+                {product.extraLine}
+              </span>
+            </>
+          )}
+        </span>
         {product.subtitle && (
           <>
             <br />
-            <span className="text-gray-600 text-md">{product.subtitle}</span>
+            <span className="text-gray-600 font-serif text-md">{product.subtitle}</span>
           </>
         )}
       </h2>

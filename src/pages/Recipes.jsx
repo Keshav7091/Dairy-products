@@ -105,7 +105,7 @@ const Recipes = () => {
 
       {/* Intro Section */}
       <section className="py-16 px-6 md:px-16 bg-gradient-to-r from-light/80 to-light/90 text-center">
-        <h2 className="text-2xl md:text-3xl font-bold text-primary mb-4">
+        <h2 className="text-2xl md:text-3xl font-bold text-primary mb-4 font-serif">
           Traditional favourites. Modern kitchens. Ingredients you trust.
         </h2>
         <p className="max-w-3xl mx-auto text-gray-700 text-lg leading-relaxed">
@@ -130,7 +130,7 @@ const Recipes = () => {
           }`}
         >
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-3">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-3 font-serif">
               {cat.title}
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">{cat.description}</p>

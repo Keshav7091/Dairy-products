@@ -60,7 +60,7 @@ const Story = () => {
           >
             {/* Removed icon div */}
             <div className="flex-1 bg-gray-50 p-6 rounded-3xl shadow-md hover:shadow-xl transition">
-              <h3 className="text-2xl text-secondary font-semibold text-gray-900 mb-3">
+              <h3 className="text-2xl font-serif text-secondary font-semibold text-gray-900 mb-3">
                 {sec.title}
               </h3>
               {sec.text.map((p, idx) => (

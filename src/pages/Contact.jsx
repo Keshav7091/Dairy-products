@@ -73,7 +73,7 @@ const Contact = () => {
       {/* Intro */}
       <section className="py-20 bg-gradient-to-b from-light via-gray-50 to-light relative overflow-hidden">
         <div className="container mx-auto px-6 text-center max-w-5xl relative z-10">
-          <h2 className="text-4xl md:text-6xl font-extrabold mb-6 leading-snug capitalize">
+          <h2 className="text-3xl md:text-5xl font-extrabold mb-6 leading-snug font-serif capitalize">
             <span className="text-cow-gradient">Our Mission is to bring</span>
             <br />
             Real , Authentic , Traditional Products to your table
@@ -126,7 +126,7 @@ const Contact = () => {
         <section className="container mx-auto px-6 max-w-6xl grid md:grid-cols-2 gap-12 items-start">
           {/* Left: Form */}
           <div className="backdrop-blur-lg border border-secondary/30 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
-            <h3 className="text-3xl font-bold mb-6 text-secondary">
+            <h3 className="text-3xl font-bold mb-6 text-secondary font-serif">
               Trade Enquiry Form
             </h3>
             <form className="space-y-5" onSubmit={handleSubmit}>
@@ -244,7 +244,7 @@ const Contact = () => {
 
           {/* Right: Contact Info */}
           <div className="backdrop-blur-lg border border-secondary/30 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all max-h-full">
-            <h3 className="text-3xl font-bold mb-6 text-secondary">
+            <h3 className="text-3xl font-bold mb-6 text-secondary font-serif">
               Prefer Email?
             </h3>
             <p className="mb-6">

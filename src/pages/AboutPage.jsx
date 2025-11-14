@@ -156,7 +156,7 @@ const AboutPage = () => {
         <div className="relative flex flex-col md:flex-row items-center md:gap-16 gap-y-10">
           <div className="md:w-1/2 order-2 md:order-1">
             <div className="relative bg-white p-8 sm:p-10 rounded-3xl shadow-2xl">
-              <h3 className="text-2xl sm:text-3xl font-bold text-primary mb-4">
+              <h3 className="text-2xl font-serif sm:text-3xl font-bold text-primary mb-4">
                 Our Production Process
               </h3>
               <p className="text-gray-700 mb-3 leading-relaxed">
@@ -205,7 +205,7 @@ const AboutPage = () => {
             />
           </div>
           <div className="md:w-1/2 mt-6 md:mt-0">
-            <h3 className="text-2xl sm:text-3xl font-bold text-primary mb-4">
+            <h3 className="text-2xl sm:text-3xl font-serif font-bold text-primary mb-4">
               Ethical & Sustainable
             </h3>
             <p className="text-gray-700 mb-4 leading-relaxed">

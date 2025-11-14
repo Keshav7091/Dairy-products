@@ -81,7 +81,7 @@ const Hero = () => {
             transition={{ duration: 1, ease: "easeOut" }}
             className="max-w-full md:max-w-xl text-center md:text-left"
           >
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-light leading-tight">
+            <h1 className="text-2xl font-serif sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-light leading-tight">
               {defaultContent.title}
             </h1>
             {/* <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg lg:text-xl text-light">
