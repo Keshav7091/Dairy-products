@@ -41,7 +41,7 @@ const LoadingPage = () => {
         }}
       >
         <video
-          src="/movingCow.mp4"
+          src="/static/optimizedCow.mp4"
           autoPlay
           loop
           muted
