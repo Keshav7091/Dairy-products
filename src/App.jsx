@@ -15,18 +15,13 @@ import SocialFloating from "./components/SocialFloating";
 import LoadingPage from "./pages/LoadingPage";
 
 function App() {
-  const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 4000);
-    return () => clearTimeout(timer);
-  }, []);
+
+
 
   return (
     <div className="font-sans relative">
-      {loading && <LoadingPage />}
+       <LoadingPage />
 
       {/* Navbar is visible on all pages */}
       <Navbar />
