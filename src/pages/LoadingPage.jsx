@@ -36,7 +36,6 @@ const LoadingPage = () => {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: "#fff",
           zIndex: 1,
           position: "relative",
         }}
