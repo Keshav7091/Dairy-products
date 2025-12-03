@@ -81,6 +81,22 @@ const products = [
     description:
       "Extracted naturally during the paneer-making process, our whey protein is a clean, vegetarian source of nutrition.",
   },
+  {
+    "name": "Vacuum Packed Corn",
+    "extraLine": "Ready to Microwave",
+    "subtitle": "12-Month Shelf Life",
+    "image": "/products/12.jpeg",
+    "description": "Specially vacuum-packed sweet corn with a 12-month shelf life — ready to microwave and enjoy anytime without worrying about short expiry supermarket corn."
+  },
+  {
+    "name": "Freeze Dried Ready-to-Eat Meals",
+    "extraLine": "Revolutionary Convenience Food",
+    "subtitle": "Shelf Life Upto 24 Months",
+    "image": "/products/13.jpeg",
+    "description": "A breakthrough range of freeze-dried meals that retain real taste and nutrition — with an impressive shelf life of up to 24 months and no refrigeration needed."
+  }
+  
+  
 ];
 
 // Single Product Component (Compact Version)
@@ -99,7 +115,7 @@ const ProductItem = ({ product, reverse }) => (
         <img
           src={product.image}
           alt={product.name}
-          className="w-full h-48 object-cover rounded-2xl hover:scale-105 transition transform duration-300"
+          className="w-full h-72 object-cover rounded-2xl hover:scale-105 transition transform duration-300"
         />
       )}
     </div>

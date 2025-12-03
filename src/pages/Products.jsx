@@ -121,6 +121,34 @@ const products = [
       "Light, refreshing taste with nutritional depth",
     ],
   },
+  {
+    "name": "Vacuum Packed Corn",
+    "extraLine": "Ready to Microwave",
+    "subtitle": "12-Month Shelf Life",
+    "image": "/products/13.jpeg",
+    "description": "Specially vacuum-packed sweet corn that is ready to microwave and enjoy anytime. With a 12-month shelf life, it takes away the hassle of buying corn with short expiry and ensures freshness whenever you need it.",
+    "features": [
+      "Ready-to-eat — just microwave and serve",
+      "Long 12-month shelf life",
+      "Maintains natural corn taste and sweetness",
+      "Eliminates storage worries of supermarket corn"
+    ]
+  },
+  {
+    "name": "Freeze Dried Ready-to-Eat Meals",
+    "extraLine": "Revolutionary Convenience Food",
+    "subtitle": "Shelf Life Upto 24 Months",
+    "image": "/products/12.jpeg",
+    "description": "A whole range of advanced freeze-dried food meals designed for convenience without compromise. Produced using cutting-edge dehydration technology that locks in nutrition, taste, and freshness — all with an impressive shelf life of up to 24 months.",
+    "features": [
+      "No refrigeration required",
+      "Shelf life up to 24 months",
+      "Lightweight & easy to carry — perfect for travel",
+      "Retains original flavour, aroma & nutrition",
+      "Instant readiness — just rehydrate and eat"
+    ]
+  }
+  
 ];
 
 const Products = () => {
@@ -197,15 +225,16 @@ const Products = () => {
           {products.slice(1).map((product, i) => (
             <div
               key={i}
-              className="bg-[#fb8c00]/10 p-6 rounded-3xl shadow-md hover:shadow-2xl 
+              className="bg-[#fb8c00]/10 p-6 flex flex-col justify-between rounded-3xl shadow-md hover:shadow-2xl 
               hover:scale-101 transition transform duration-300 border border-transparent hover:border-[#fb8c00] group"
             >
-              {/* Image Section */}
+              <div>
+                     {/* Image Section */}
               {product.images ? (
                 // 🥒 Low Oil Pickles: Auto Image Switch
                 <AutoImageSwitch images={product.images} name={product.name} />
               ) : (
-                <div className="w-full h-48 mb-4 overflow-hidden rounded-2xl">
+                <div className="w-full h-72 mb-4 overflow-hidden rounded-2xl">
                   <img
                     src={product.image}
                     alt={product.name}
@@ -250,9 +279,11 @@ const Products = () => {
                   </li>
                 ))}
               </ul>
+    </div>
+         
 
               {/* CTA Button */}
-              <CustomButton text="Order Now" link="/contact" />
+              <CustomButton className="w-fit mx-auto" text="Order Now" link="/contact" />
             </div>
           ))}
         </div>
